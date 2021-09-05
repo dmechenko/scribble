@@ -1,9 +1,11 @@
 import React from 'react';
+import SplashContainer from './splash/splash_container';
 
 const App = () => (
   <div>
     <header>
-      <h1>Scribble</h1>
+      <h1>sssssscribble!</h1>
+      <SplashContainer />
     </header>
   </div>
 );
