@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 // import Root from './components/root';
 // import configureStore from './store/store';
 // import * as SessionAPIUtil from './actions/session_actions';
+import * as SessionAPIUtil from './util/session_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   // let store;
@@ -21,4 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // const store = configureStore();
   const root = document.getElementById('root');
   ReactDOM.render(<h1>Test</h1>, root);
+  window.login = SessionAPIUtil.login;
+  window.signup = SessionAPIUtil.signup;
+  window.logout = SessionAPIUtil.logout;
 });
