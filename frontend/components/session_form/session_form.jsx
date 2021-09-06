@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import pattern from '../../../app/assets/images/loginBG.png';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -35,7 +36,7 @@ class SessionForm extends React.Component {
       <Redirect to={'/'} />;
     }
     return (
-      <div>
+      <div className='background-login'>
         <form className='session-form' onSubmit={(e) => this.handleSubmit(e)}>
           <h2>scribble</h2>
           <br />

@@ -18,34 +18,17 @@ const receiveErrors = (errors) => ({
   errors,
 });
 
-// export const signup = (user) => (dispatch) =>
-//   SessionAPIUtil.signup(user).then(
-//     (user) => dispatch(receiveCurrentUser(user)),
-//     (errors) => dispatch(receiveErrors(errors.ResponseJSON))
-//   );
-
 export const signup = (user) => (dispatch) =>
   SessionAPIUtil.signup(user).then(
     (user) => dispatch(receiveCurrentUser(user)),
     (errors) => dispatch(receiveErrors(errors.responseJSON))
   );
 
-// export const login = (user) => (dispatch) =>
-//   SessionAPIUtil.login(user).then(
-//     (currentUser) => dispatch(receiveCurrentUser(currentUser))),
-//     (errors) => dispatch(receiveErrors(errors.ResponseJSON))
-
 export const login = (user) => (dispatch) =>
   SessionAPIUtil.login(user).then(
     (currentUser) => dispatch(receiveCurrentUser(currentUser)),
     (errors) => dispatch(receiveErrors(errors.responseJSON))
   );
-
-// export const logout = () => (dispatch) =>
-//   SessionAPIUtil.logout().then(
-//     () => dispatch(logoutCurrentUser()),
-//     (errors) => dispatch(receiveErrors(errors.ResponseJSON))
-//   );
 
 export const logout = () => (dispatch) =>
   SessionAPIUtil.logout().then(
