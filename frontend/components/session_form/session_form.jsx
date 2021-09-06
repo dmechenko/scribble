@@ -49,24 +49,28 @@ class SessionForm extends React.Component {
                 onChange={this.handleChange('email')}
                 placeholder='Email address or username'
               />
+              <br />
               <input
                 className='session-input'
                 type='password'
                 value={this.state.password}
                 onChange={this.handleChange('password')}
               />
+              <br />
               <button className='session-signin-btn'>Sign in</button>
-              <Link to={'/login'}></Link>
+              <br />
+              <Link to='/signup'>Create an account</Link>
             </>
           ) : (
             <>
               <input
                 className='session-input'
-                type='text'
+                type='email'
                 value={this.state.email}
                 onChange={this.handleChange('email')}
                 placeholder='Email'
               />
+              <br />
               <input
                 className='session-input'
                 type='password'
@@ -74,8 +78,10 @@ class SessionForm extends React.Component {
                 onChange={this.handleChange('password')}
                 placeholder='Password'
               />
+              <br />
               <button className='session-signup-btn'>Continue</button>
-              <Link to={'/login'}></Link>
+              <br />
+              <Link to='/login'>Already have an account?</Link>
             </>
           )}
           {this.renderErrors()}

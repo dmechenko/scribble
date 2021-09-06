@@ -1,0 +1,61 @@
+.dolphin {
+  height: 40px;
+  width: 40px;
+}
+
+#logo-text {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  align-items: center;
+  padding-right: 50px;
+  font-family: 'Soleil';
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav {
+  padding-top: 20px;
+  padding-left: 60px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px black solid;
+  padding-bottom: 20px;
+  font-family: 'Soleil';
+}
+
+.main-nav#logo-text {
+  align-items: center;
+  margin-right: 20px;
+  padding: 50px;
+}
+
+.main-nav a,
+ul {
+  text-decoration: none;
+  color: black;
+  padding-left: 20px;
+}
+
+.main-nav li {
+  display: inline;
+  align-items: center;
+}
+
+.entry-nav a {
+  text-decoration: none;
+  color: black;
+  float: right;
+  position: absolute;
+  right: 3.5%;
+  top: 3.5%;
+  font-family: 'Soleil';
+}
+
+.nav-menu {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
