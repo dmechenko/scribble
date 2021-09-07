@@ -1,0 +1,39 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+class Sidenav extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  handleCreate() {
+    let note = {
+      title: '',
+      body: '',
+      author_id: this.props.currentUser.id,
+    };
+    this.props.createNote(note);
+  }
+
+  render() {
+    debugger;
+    let { logout, currentUser } = this.props;
+    return (
+      <div className='side-nav'>
+        <div className='user-info'>
+          <p className='user-email'>{currentUser.email}</p>
+        </div>
+        <button onClick={() => this.handleCreate()}>Add Note</button>
+        <ul className='side-nav-uc'>
+          <li>
+            <Link to='/' onClick={logout}>
+              Sign Out
+            </Link>
+          </li>
+        </ul>
+      </div>
+    );
+  }
+}
+
+export default Sidenav;
