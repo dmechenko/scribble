@@ -42,17 +42,19 @@ ul {
 
 .main-nav li {
   display: inline;
-  align-items: center;
+  /* align-items: center; */
+}
+
+.main-nav ul:last-child {
+  margin-left: auto;
+  padding-right: 5%;
 }
 
 .entry-nav a {
   text-decoration: none;
   color: black;
-  float: right;
-  position: absolute;
-  right: 3.5%;
-  top: 3.5%;
   font-family: 'Soleil';
+  float: right;
 }
 
 .nav-menu {

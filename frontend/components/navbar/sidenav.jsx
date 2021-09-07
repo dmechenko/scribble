@@ -16,7 +16,6 @@ class Sidenav extends React.Component {
   }
 
   render() {
-    debugger;
     let { logout, currentUser } = this.props;
     return (
       <div className='side-nav'>

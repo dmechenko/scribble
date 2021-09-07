@@ -4,22 +4,38 @@ import ReactQuill from 'react-quill';
 class NoteEditor extends React.Component {
   constructor(props) {
     super(props);
-    const today = new Date();
+    this.today = new Date();
     this.state = {
       id: 0,
       title: '',
       body: '',
-      updated_at: today.toLocaleDateString('en-US'),
+      updated_at: this.today.toLocaleDateString('en-US'),
     };
   }
+
+  handleChange(field) {
+    return (e) => this.setState({ [field]: e.target.value });
+  }
+
   render() {
     return (
-      <div className='quill-container'>
-        <ReactQuill
-          theme='snow'
-          value={this.state.body}
-          onChange={this.handleChange}
-        />
+      <div className='note-container'>
+        <div className='note-title-container'>
+          <input
+            type='text'
+            value={this.state.title}
+            onChange={this.handleChange('title')}
+          />
+        </div>
+        <div className='quill-container'>
+          <ReactQuill
+            theme='snow'
+            value={this.state.body}
+            placeholder='start scribbling'
+            // onChange={this.handleChange('body')}
+          />
+        </div>
+        <p>Last updated: {this.state.updated_at}</p>
       </div>
     );
   }
