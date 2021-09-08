@@ -8,11 +8,12 @@ class Sidenav extends React.Component {
 
   handleCreate() {
     let note = {
-      title: '',
+      title: 'Untitled',
       body: '',
-      author_id: this.props.currentUser.id,
     };
-    this.props.createNote(note);
+    this.props.createNote(note).then((object) => {
+      this.props.history.push(`/notes/${object.note.id}`);
+    });
   }
 
   render() {

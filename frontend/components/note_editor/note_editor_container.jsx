@@ -4,11 +4,13 @@ import {
   fetchNote,
   fetchNotes,
   updateNote,
+  deleteNote,
 } from '../../actions/note_actions';
 import NoteEditor from './note_editor';
 
 const mSTP = (state, ownProps) => ({
   note: state.entities.notes[ownProps.match.params.noteId],
+  noteId: state.entities.notes[ownProps.match.params.noteId],
 });
 
 const mDTP = (dispatch) => ({

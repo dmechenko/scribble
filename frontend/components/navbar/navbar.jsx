@@ -25,9 +25,6 @@ class Navbar extends React.Component {
             <li>
               <a href='#'>PLANS</a>
             </li>
-            {/* <li>
-              <NavbarEntryContainer />
-            </li> */}
           </ul>
           <ul className='nav-entry'>
             <NavbarEntryContainer />

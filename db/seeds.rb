@@ -5,3 +5,34 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.delete_all
+Note.delete_all
+
+demo_user = User.create!(email: 'pencil@scribble.com', password: 'scribblin')
+
+note_seed1 = Note.create!(
+  title: Faker::Company.catch_phrase,
+  body: Faker::TvShows::Seinfeld.quote,
+  author_id: demo_user.id
+)
+note_seed2 = Note.create!(
+  title: Faker::Company.catch_phrase,
+  body: Faker::TvShows::Seinfeld.quote,
+  author_id: demo_user.id
+)
+note_seed3 = Note.create!(
+  title: Faker::Company.catch_phrase,
+  body: Faker::TvShows::Seinfeld.quote,
+  author_id: demo_user.id
+)
+note_seed4 = Note.create!(
+  title: Faker::Company.catch_phrase,
+  body: Faker::TvShows::Seinfeld.quote,
+  author_id: demo_user.id
+)
+note_seed5 = Note.create!(
+  title: Faker::Company.catch_phrase,
+  body: Faker::TvShows::Seinfeld.quote,
+  author_id: demo_user.id
+)

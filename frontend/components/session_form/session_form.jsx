@@ -11,8 +11,8 @@ class SessionForm extends React.Component {
   }
 
   demoUser() {
-    this.setState({ email: 'test', password: 'testes' });
-    this.processForm(this.state);
+    this.setState({ email: 'pencil@scribble.com', password: 'scribblin' });
+    this.props.login(this.state);
   }
 
   handleSubmit(e) {

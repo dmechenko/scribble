@@ -13,6 +13,12 @@ class NoteEditor extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.props.fetchNotes().then((object) => {
+      this.setState({ note: object.note });
+    });
+  }
+
   handleChange(field) {
     return (e) => this.setState({ [field]: e.target.value });
   }

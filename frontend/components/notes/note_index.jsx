@@ -10,7 +10,11 @@ class NoteIndex extends React.Component {
   }
 
   render() {
-    return <div className='note-index-container'>poop</div>;
+    return (
+      <div className='note-index-container'>
+        <NoteIndexItem note={note} id={note.id} />
+      </div>
+    );
   }
 }
 

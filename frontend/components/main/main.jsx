@@ -8,17 +8,11 @@ class Main extends React.Component {
     return (
       <div className='notes-main'>
         <Route component={SideNavContainer}></Route>
-        <Route path='/notes' component={NoteEditorContainer}></Route>
+        {/* <Route path='/notes/' component={NoteIndexContainer}></Route> */}
+        <Route path='/notes/:noteId' component={NoteEditorContainer}></Route>
       </div>
     );
   }
 }
-
-// const Main = () => (
-//   <div className='notes-main'>
-//     <Route component={SideNavContainer}></Route>
-//     <Route path='/notes' component={NoteEditorContainer}></Route>
-//   </div>
-// );
 
 export default Main;
