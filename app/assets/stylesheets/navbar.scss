@@ -8,7 +8,7 @@
   font-size: 2rem;
   font-weight: bold;
   align-items: center;
-  padding-right: 50px;
+  // padding-right: 50px;
   font-family: 'Soleil';
 }
 
@@ -22,7 +22,7 @@
   padding-left: 60px;
   display: flex;
   align-items: center;
-  border-bottom: 2px black solid;
+  border-bottom: 100px black solid;
   padding-bottom: 20px;
   font-family: 'Soleil';
 }
@@ -38,6 +38,11 @@ ul {
   text-decoration: none;
   color: black;
   padding-left: 20px;
+  transition-property: color;
+  :hover {
+    color: #24ace6;
+    transition: 0.2s ease-in;
+  }
 }
 
 .main-nav li {
@@ -48,6 +53,10 @@ ul {
 .main-nav ul:last-child {
   margin-left: auto;
   padding-right: 5%;
+  :hover {
+    color: #24ace6;
+    transition: 0.2s ease-in;
+  }
 }
 
 .entry-nav a {
@@ -60,4 +69,9 @@ ul {
 .nav-menu {
   font-size: 0.85rem;
   font-weight: bold;
+  :hover {
+    transition: 0s;
+    padding-bottom: 10%;
+    border-bottom: 5px solid #24ace6;
+  }
 }
