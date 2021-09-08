@@ -3,7 +3,7 @@ import { fetchNotes } from '../../actions/note_actions';
 import NoteIndex from './note_index';
 
 const mSTP = (state) => ({
-  notes: Object.values(state.notes),
+  notes: Object.values(state.entities.notes),
 });
 
 const mDTP = (dispatch) => ({

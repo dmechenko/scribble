@@ -20,6 +20,7 @@ class NoteEditor extends React.Component {
   }
 
   handleChange(field) {
+    debugger;
     return (e) => this.setState({ [field]: e.target.value });
   }
 
@@ -38,7 +39,7 @@ class NoteEditor extends React.Component {
             theme='snow'
             value={this.state.body}
             placeholder='start scribbling'
-            // onChange={this.handleChange('body')}
+            onChange={this.handleChange('body')}
           />
         </div>
         <p>Last updated: {this.state.updated_at}</p>

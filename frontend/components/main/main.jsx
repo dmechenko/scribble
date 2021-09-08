@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import SideNavContainer from '../navbar/sidenav_container';
+import NoteIndexContainer from '../notes/note_index_container';
 import NoteEditorContainer from '../note_editor/note_editor_container';
 
 class Main extends React.Component {
@@ -8,7 +9,7 @@ class Main extends React.Component {
     return (
       <div className='notes-main'>
         <Route component={SideNavContainer}></Route>
-        {/* <Route path='/notes/' component={NoteIndexContainer}></Route> */}
+        <Route path='/notes/' component={NoteIndexContainer}></Route>
         <Route path='/notes/:noteId' component={NoteEditorContainer}></Route>
       </div>
     );
