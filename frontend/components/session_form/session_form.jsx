@@ -1,8 +1,5 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import dolphin from '../../../app/assets/images/dolphin_logo.png';
-import google from '../../../app/assets/images/google-logo.png';
-import apple from '../../../app/assets/images/apple-logo.svg';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -46,18 +43,18 @@ class SessionForm extends React.Component {
     return (
       <div className='background-login'>
         <form className='session-form' onSubmit={(e) => this.handleSubmit(e)}>
-          <img className='dolphin' src={dolphin} alt='' />
+          <img className='dolphin' src={dolphinLogo} alt='' />
           <h2>scribble</h2>
           <p>Remember everything important.</p>
           <div className='fake-button'>
             <button className='continue-with-googapp' disabled>
-              <img className='googapp' src={google} />
+              <img className='googapp' src={googleLogo} />
               <p className='continue-with'>Continue with Google</p>
             </button>
           </div>
           <div className='fake-button'>
             <button className='continue-with-googapp' disabled>
-              <img className='googapp' src={apple} />
+              <img className='googapp' src={appleLogo} />
               <p className='continue-with'>Continue with Apple</p>
             </button>
           </div>

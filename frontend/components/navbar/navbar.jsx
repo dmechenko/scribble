@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import NavbarEntryContainer from './navbar_entry_container';
-import dolphin from '../../../app/assets/images/dolphin_logo.png';
 
 class Navbar extends React.Component {
   handleLogout() {
@@ -13,7 +12,7 @@ class Navbar extends React.Component {
       <header className='header'>
         <div className='main-nav'>
           <Link className='logo' to='/'>
-            <img className='dolphin' src={dolphin} alt='' />
+            <img className='dolphin' src={dolphinLogo} alt='' />
             <p id='logo-text'>scribble</p>
           </Link>
           <ul className='nav-menu'>
