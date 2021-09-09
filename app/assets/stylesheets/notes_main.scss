@@ -2,6 +2,7 @@
   display: flex;
   background: image-url('winter-logo');
   height: 100vh;
+  overflow: hidden;
 }
 
 .note-index-container {
@@ -25,7 +26,14 @@
 }
 
 .note-container {
+  overflow: none;
   background: white;
+  .quill-container {
+    height: 500px;
+    .ql-container {
+      height: auto;
+    }
+  }
 }
 
 .note-index-container {
