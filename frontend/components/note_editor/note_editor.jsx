@@ -20,7 +20,6 @@ class NoteEditor extends React.Component {
   }
 
   handleChange(field) {
-    debugger;
     return (e) => this.setState({ [field]: e.target.value });
   }
 
