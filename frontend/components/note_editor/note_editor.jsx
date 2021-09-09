@@ -17,6 +17,7 @@ class NoteEditor extends React.Component {
     this.props.fetchNote(this.props.match.params.noteId).then((object) => {
       this.setState({ title: object.note.title, body: object.note.body });
     });
+    this.props.fetchNotes();
   }
 
   handleChange(field) {
@@ -28,8 +29,9 @@ class NoteEditor extends React.Component {
   }
 
   deleteNote() {
-    preventDefault();
+    debugger;
     this.props.deleteNote(this.state.id);
+    window.location.reload();
   }
 
   render() {
@@ -41,7 +43,7 @@ class NoteEditor extends React.Component {
             value={this.state.title}
             onChange={this.handleChange('title')}
           />
-          <button onClick={(e) => this.deleteNote(e)}>Delete</button>
+          <button onClick={() => this.deleteNote()}>Delete</button>
         </div>
         <div className='quill-container'>
           <ReactQuill

@@ -24,6 +24,6 @@ export const updateNote = (note) =>
 
 export const deleteNote = (noteId) =>
   $.ajax({
-    url: `/api/posts/${noteId}`,
+    url: `/api/notes/${noteId}`,
     method: 'delete',
   });
