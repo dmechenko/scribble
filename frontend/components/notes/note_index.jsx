@@ -12,9 +12,9 @@ class NoteIndex extends React.Component {
 
   render() {
     if (!this.props.notes) return null;
-    let notes = this.props.notes.map((note) => (
-      <NoteIndexItem note={note} key={note.id} />
-    ));
+    let notes = this.props.notes
+      .reverse()
+      .map((note) => <NoteIndexItem note={note} key={note.id} />);
     return <div className='note-index-container'>{notes}</div>;
   }
 }

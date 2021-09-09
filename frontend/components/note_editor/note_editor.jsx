@@ -27,11 +27,10 @@ class NoteEditor extends React.Component {
     };
   }
 
-  // quillOnChange(value) {
-  //   this.setState({ body: value });
-  // }
-
   render() {
+    // debugger;
+    // let cleanBody = this.state.body.replace(/<[^>]+>/g, '');
+    // this.state = { body: cleanBody };
     return (
       <div className='note-container'>
         <div className='note-title-container'>
@@ -42,10 +41,6 @@ class NoteEditor extends React.Component {
           />
         </div>
         <div className='quill-container'>
-          {/* <QuillEditor
-            value={this.state.body}
-            onChange={this.handleChange('body')}
-          /> */}
           <ReactQuill
             theme='snow'
             value={this.state.body}
