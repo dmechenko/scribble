@@ -27,23 +27,11 @@ class NoteEditor extends React.Component {
     };
   }
 
-  // quillOnChange(content, delta, source, editor){
-  //   this.setState ({ content: html })
+  // quillOnChange(value) {
+  //   this.setState({ body: value });
   // }
 
   render() {
-    // let options = {
-    //   debug: 'info',
-    //   modules: {
-    //     toolbar: '#toolbar',
-    //   },
-    //   placeholder: 'Compose an epic...',
-    //   readOnly: true,
-    //   theme: 'snow',
-    // };
-
-    // let QuillEditor = new Quill('#editor', options);
-
     return (
       <div className='note-container'>
         <div className='note-title-container'>
@@ -60,10 +48,13 @@ class NoteEditor extends React.Component {
           /> */}
           <ReactQuill
             theme='snow'
-            readOnly={true}
             value={this.state.body}
             placeholder='start scribbling'
-            onChange={this.handleChange('body')}
+            onChange={(value) =>
+              this.setState({ body: value }, () =>
+                this.props.updateNote(this.state)
+              )
+            }
           />
         </div>
         <p>Last updated: {this.state.updated_at}</p>
