@@ -21,6 +21,7 @@ class Sidenav extends React.Component {
     return (
       <div className='side-nav'>
         <div className='user-info'>
+          <img className='pencil-logo' src={pencilLogo} />
           <p className='user-email'>{currentUser.email}</p>
         </div>
         <button onClick={() => this.handleCreate()}>Add Note</button>
