@@ -10,12 +10,23 @@
   flex-direction: column;
   justify-content: space-between;
   overflow-y: scroll;
+  font-family: Calibri;
 
   .note-index-item-container {
     .note-index-item {
       height: 100px;
       border: 1px solid rgb(207, 207, 207);
     }
+  }
+
+  .title {
+    font-size: 1.3rem;
+    padding: 5px;
+    padding-bottom: 10px;
+  }
+
+  .body {
+    padding: 5px;
   }
 }
 
@@ -29,9 +40,8 @@
   overflow: none;
   background: white;
   .quill-container {
-    height: 500px;
     .ql-container {
-      height: auto;
+      height: 30vh;
     }
   }
 }
