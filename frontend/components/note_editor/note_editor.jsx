@@ -27,10 +27,12 @@ class NoteEditor extends React.Component {
     };
   }
 
+  deleteNote() {
+    preventDefault();
+    this.props.deleteNote(this.state.id);
+  }
+
   render() {
-    // debugger;
-    // let cleanBody = this.state.body.replace(/<[^>]+>/g, '');
-    // this.state = { body: cleanBody };
     return (
       <div className='note-container'>
         <div className='note-title-container'>
@@ -39,6 +41,7 @@ class NoteEditor extends React.Component {
             value={this.state.title}
             onChange={this.handleChange('title')}
           />
+          <button onClick={(e) => this.deleteNote(e)}>Delete</button>
         </div>
         <div className='quill-container'>
           <ReactQuill
