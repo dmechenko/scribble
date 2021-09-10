@@ -10,9 +10,14 @@ class SessionForm extends React.Component {
     };
   }
 
-  demoUser() {
-    this.setState({ email: 'pencil@scribble.com', password: 'scribblin' });
-    this.props.login(this.state);
+  demoUser(e) {
+    e.preventDefault();
+    const demoUser = { email: 'pencil@scribble.com', password: 'scribblin' };
+    this.props.processForm(demoUser);
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   handleSubmit(e) {
@@ -47,13 +52,13 @@ class SessionForm extends React.Component {
           <h2>scribble</h2>
           <p>Remember everything important.</p>
           <div className='fake-button'>
-            <button className='continue-with-googapp' disabled>
+            <button className='continue-with-googapp'>
               <img className='googapp' src={googleLogo} />
               <p className='continue-with'>Continue with Google</p>
             </button>
           </div>
           <div className='fake-button'>
-            <button className='continue-with-googapp' disabled>
+            <button className='continue-with-googapp'>
               <img className='googapp' src={appleLogo} />
               <p className='continue-with'>Continue with Apple</p>
             </button>
@@ -76,11 +81,11 @@ class SessionForm extends React.Component {
                 onChange={this.handleChange('password')}
                 placeholder='Password'
               />
-
+              <div className='errors'>{this.renderErrors()}</div>
               <button className='session-signin-btn'>Sign in</button>
 
               <button
-                onClick={() => this.demoUser()}
+                onClick={(e) => this.demoUser(e)}
                 className='session-signin-btn demo-user'
               >
                 Demo User
@@ -110,13 +115,13 @@ class SessionForm extends React.Component {
                 onChange={this.handleChange('password')}
                 placeholder='Password'
               />
+              <div className='errors'>{this.renderErrors()}</div>
               <button className='session-signin-btn'>Continue</button>
               <Link className='link2' to='/login'>
                 Already have an account?
               </Link>
             </>
           )}
-          {this.renderErrors()}
         </form>
       </div>
     );

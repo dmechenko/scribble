@@ -156,4 +156,12 @@
     color: rgb(131, 131, 131);
     margin-bottom: 10%;
   }
+  div.errors ul li {
+    display: flex;
+    font-family: Urbanist;
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 6px;
+    margin-bottom: 12px;
+  }
 }
