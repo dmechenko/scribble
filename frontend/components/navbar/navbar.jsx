@@ -15,6 +15,7 @@ class Navbar extends React.Component {
             <img className='dolphin' src={dolphinLogo} alt='' />
             <p id='logo-text'>scribble</p>
           </Link>
+          {/* <div className='nav-menu-border-box'> */}
           <ul className='nav-menu'>
             <li>
               <a href='#'>WHY SCRIBBLE</a>
@@ -26,6 +27,7 @@ class Navbar extends React.Component {
               <a href='#'>PLANS</a>
             </li>
           </ul>
+          {/* </div> */}
           <ul className='nav-entry'>
             <NavbarEntryContainer />
           </ul>

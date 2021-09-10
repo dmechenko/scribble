@@ -19,12 +19,26 @@
 
 .main-nav {
   padding-top: 20px;
-  padding-left: 60px;
+  padding-left: 10%;
   display: flex;
   align-items: center;
-  border-bottom: 100px black solid;
+  border-bottom: 5px black solid;
   padding-bottom: 20px;
   font-family: 'Urbanist', sans-serif;
+  min-width: 800px;
+  // background: radial-gradient(
+  //   ellipse at center,
+  //   rgba(255, 254, 234, 1) 0%,
+  //   rgba(255, 254, 234, 1) 35%,
+  //   #b7e8eb 100%
+  // );
+  background: linear-gradient(
+    0deg,
+    rgba(164, 247, 254, 1) 0%,
+    rgba(219, 249, 251, 1) 4%,
+    rgba(255, 255, 255, 1) 8%
+  );
+  // max-width: 1080px;
 }
 
 .main-nav#logo-text {
@@ -33,8 +47,9 @@
   padding: 50px;
 }
 
-.main-nav > a,
-.main-nav > ul a {
+.main-nav a,
+ul {
+  text-align: justify;
   text-decoration: none;
   color: black;
   margin-left: 20px;
@@ -48,12 +63,13 @@
 
 .main-nav li {
   display: inline;
-  /* align-items: center; */
 }
 
 .main-nav ul:last-child {
   margin-left: auto;
-  padding-right: 5%;
+  padding-right: 12.5%;
+  font-weight: 900;
+  font-size: 1.5rem;
   :hover {
     color: #24ace6;
     transition: 0.2s ease-in;
