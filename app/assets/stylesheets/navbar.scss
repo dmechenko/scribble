@@ -33,11 +33,12 @@
   padding: 50px;
 }
 
-.main-nav a,
-ul {
+.main-nav > a,
+.main-nav > ul a {
   text-decoration: none;
   color: black;
-  // margin-left: 20px;
+  margin-left: 20px;
+  flex-direction: row;
   transition-property: color;
   :hover {
     color: #24ace6;
