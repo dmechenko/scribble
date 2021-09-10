@@ -15,9 +15,17 @@ class NoteEditor extends React.Component {
 
   componentDidMount() {
     this.props.fetchNote(this.props.match.params.noteId).then((object) => {
-      this.setState({ title: object.note.title, body: object.note.body });
+      this.setState({
+        title: object.note.title,
+        body: object.note.body,
+        updated_at: object.note.updated_at,
+      });
     });
     this.props.fetchNotes();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.noteId !== prevProps.noteId) this.setState(this.props.note);
   }
 
   handleChange(field) {
@@ -29,9 +37,16 @@ class NoteEditor extends React.Component {
   }
 
   deleteNote() {
-    debugger;
-    this.props.deleteNote(this.state.id);
-    window.location.reload();
+    let notes = Object.values(this.props.notes);
+    let nextNote;
+    notes.length > 1 ? (nextNote = notes[notes.length - 2].id) : nextNote;
+    nextNote
+      ? this.props
+          .deleteNote(this.state.id)
+          .then(this.props.history.push(`/notes/${nextNote}`))
+      : this.props
+          .deleteNote(this.state.id)
+          .then(this.props.history.push(`/notes/`));
   }
 
   render() {
@@ -57,7 +72,6 @@ class NoteEditor extends React.Component {
             }
           />
         </div>
-        <p>Last updated: {this.state.updated_at}</p>
       </div>
     );
   }
