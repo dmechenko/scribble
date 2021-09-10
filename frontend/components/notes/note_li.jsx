@@ -1,5 +1,6 @@
 import React from 'react';
 import NoteIndexItem from './note_index_item';
+
 //intermediary for rendering
 
 class NoteLis extends React.Component {

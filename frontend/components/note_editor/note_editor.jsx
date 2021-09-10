@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ReactQuill, { Quill } from 'react-quill';
+import ReactQuill from 'react-quill';
+import { debounce } from 'debounce';
 
 class NoteEditor extends React.Component {
   constructor(props) {
@@ -65,11 +66,13 @@ class NoteEditor extends React.Component {
             theme='snow'
             value={this.state.body}
             placeholder='start scribbling'
-            onChange={(value) =>
-              this.setState({ body: value }, () =>
-                this.props.updateNote(this.state)
-              )
-            }
+            onChange={debounce(
+              (value) =>
+                this.setState({ body: value }, () =>
+                  this.props.updateNote(this.state)
+                ),
+              200
+            )}
           />
         </div>
       </div>

@@ -52,13 +52,19 @@ class SessionForm extends React.Component {
           <h2>scribble</h2>
           <p>Remember everything important.</p>
           <div className='fake-button'>
-            <button className='continue-with-googapp'>
+            <button
+              className='continue-with-googapp'
+              onClick={(e) => this.demoUser(e)}
+            >
               <img className='googapp' src={googleLogo} />
               <p className='continue-with'>Continue with Google</p>
             </button>
           </div>
           <div className='fake-button'>
-            <button className='continue-with-googapp'>
+            <button
+              className='continue-with-googapp'
+              onClick={(e) => this.demoUser(e)}
+            >
               <img className='googapp' src={appleLogo} />
               <p className='continue-with'>Continue with Apple</p>
             </button>
