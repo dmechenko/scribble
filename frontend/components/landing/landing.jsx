@@ -44,35 +44,41 @@ const Landing = () => {
       </div>
       <div className='landing-sections'>
         <div className='section'>
-          <div className='block'>
-            <h2>Get into the flow.</h2> {/* block */}
-          </div>
-          <ul>
-            <li>Hit your deadlines</li>
-            <li>Organize your life</li>
-            <li>Go paperless</li>
-          </ul>
-        </div>
-        <div className='section'>
-          <div className='block'>
-            <h2>Anywhere, anytime.</h2> {/* block */}
-          </div>
-          <p>Sign in on any browser</p>
-        </div>
-        <div className='section'>
-          <div className='block'>
-            <h2>The best part?</h2> {/* block */}
+          <div className='block block-1'>
+            <h2>GET INTO THE FLOW</h2> {/* block */}
+            <ul>
+              <li>
+                <img className='green-check' src={greenCheck} />
+                Hit your deadlines
+              </li>
+              <li>
+                <img className='green-check' src={greenCheck} />
+                Organize your life
+              </li>
+              <li>
+                <img className='green-check' src={greenCheck} />
+                Go paperless
+              </li>
+            </ul>
           </div>
         </div>
         <div className='section'>
-          <p>
-            It's comletely<span>FREE!</span>
-          </p>
-          <p>Try out the demo user today!</p>
+          <div className='block block-2'>
+            <h2>ANYWHERE, ANYTIME</h2> {/* block */}
+            <p>Sign in on any browser</p>
+          </div>
         </div>
         <div className='section'>
-          <div className='block'>
-            <p>Ready to dive in?</p> {/* block */}
+          <div className='block block-3'>
+            <h2>THE BEST PART?</h2> {/* block */}
+            <p>It's comletely free!</p>
+            {/* <p>Try out the demo user today!</p> */}
+          </div>
+        </div>
+        {/* <div className='section'></div> */}
+        <div className='section'>
+          <div className='block block-4'>
+            <p>READY TO DIVE IN?</p> {/* block */}
             <Link className='session-signin-btn' to='/signup'>
               Sign Up
             </Link>

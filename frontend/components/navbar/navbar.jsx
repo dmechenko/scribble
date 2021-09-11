@@ -7,14 +7,19 @@ class Navbar extends React.Component {
     this.props.logout();
   }
 
+  handleScroll() {
+    $('html,body').animate(
+      {
+        scrollTop: $('.landing-sections').offset().top,
+      },
+      'slow'
+    );
+  }
+
   render() {
     return (
       <header className='header'>
         <div className='main-nav'>
-          <div className='ocean'>
-            <div className='wave'></div>
-            <div className='wave'></div>
-          </div>
           <Link className='logo' to='/'>
             <img className='dolphin' src={dolphinLogo} alt='' />
             <p id='logo-text'>scribble</p>
@@ -22,7 +27,9 @@ class Navbar extends React.Component {
           {/* <div className='nav-menu-border-box'> */}
           <ul className='nav-menu'>
             <li>
-              <a href='#'>WHY SCRIBBLE</a>
+              <a onClick={this.handleScroll} href='#'>
+                WHY SCRIBBLE
+              </a>
             </li>
             <li>
               <a href='#'>FEATURES</a>
