@@ -8,14 +8,16 @@ const Landing = () => {
         <h1>Don't lose track of your ideas.</h1>
         <h5>Scribble can store your notes forever.</h5>
       </div>
-      <Link className='session-signin-btn' to='/signup'>
-        Sign Up
-      </Link>
+      <button className='session-signin-btn'>
+        <Link className='sign-in-text' to='/signup'>
+          Sign Up
+        </Link>
+      </button>
       <div className='content'>
-        <img src={dolphinLogo} />
+        <img src={computerIcon} />
         <div className='reasons'>
           <div className='reason-text'>
-            <h3>Placeholder</h3>
+            <h3>REMEMBER EVERYTHING</h3>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta,
               consequatur asperiores! Modi saepe, tempora nulla, harum rerum
