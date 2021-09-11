@@ -11,6 +11,10 @@ class Navbar extends React.Component {
     return (
       <header className='header'>
         <div className='main-nav'>
+          <div className='ocean'>
+            <div className='wave'></div>
+            <div className='wave'></div>
+          </div>
           <Link className='logo' to='/'>
             <img className='dolphin' src={dolphinLogo} alt='' />
             <p id='logo-text'>scribble</p>

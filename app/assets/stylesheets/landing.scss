@@ -22,21 +22,46 @@
       max-width: 70%;
     }
   }
-  .sign-up {
-    padding: 3%;
+  .sign-up p,
+  .session-signin-btn {
+    display: flex;
+    padding-top: 3%;
     text-align: center;
-    .session-signin-btn {
-      color: white;
-      background: #24ace6;
-      border-color: #24ace6;
-      border: 1px solid #24ace6;
-      min-height: 45px;
-      min-width: 90%;
-      border-radius: 5px;
-      margin: 0px 100px 0px;
-      cursor: pointer;
-      margin-top: 5px;
-      transition-property: background-color;
+    margin-bottom: 4px;
+    justify-content: center;
+  }
+  .session-signin-btn {
+    color: white;
+    background: #24ace6;
+    border: 1px solid #24ace6;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition-property: background-color;
+    text-decoration: none;
+  }
+  .landing-sections {
+    display: flex;
+    flex-direction: column;
+    .section {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1%;
+      margin-bottom: 1%;
+      .block {
+        display: flex;
+        background: black;
+        height: 20vh;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        color: white;
+      }
+    }
+    .section ul,
+    p {
+      display: flex;
+      justify-content: space-evenly;
     }
   }
 }

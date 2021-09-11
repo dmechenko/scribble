@@ -5,15 +5,12 @@ const Landing = () => {
   return (
     <div className='landing-main'>
       <div className='description'>
-        <h1>Goldfish can actually store memories for five months.</h1>
+        <h1>Don't lose track of your ideas.</h1>
         <h5>Scribble can store your notes forever.</h5>
       </div>
-      <div className='sign-up'>
-        <p>Ready to dive in?</p>
-        <Link className='session-signin-btn' to='/signup'>
-          Sign Up
-        </Link>
-      </div>
+      <Link className='session-signin-btn' to='/signup'>
+        Sign Up
+      </Link>
       <div className='content'>
         <img src={dolphinLogo} />
         <div className='reasons'>
@@ -43,12 +40,42 @@ const Landing = () => {
           </div>
         </div>
       </div>
-      <div className='its-free'>
-        <h2>The best part?</h2>
-        <p>
-          It's comletely<strong>FREE!</strong>
-        </p>
-        <p>Try out the demo user today!</p>
+      <div className='landing-sections'>
+        <div className='section'>
+          <div className='block'>
+            <h2>Get into the flow.</h2> {/* block */}
+          </div>
+          <ul>
+            <li>Hit your deadlines</li>
+            <li>Organize your life</li>
+            <li>Go paperless</li>
+          </ul>
+        </div>
+        <div className='section'>
+          <div className='block'>
+            <h2>Anywhere, anytime.</h2> {/* block */}
+          </div>
+          <p>Sign in on any browser</p>
+        </div>
+        <div className='section'>
+          <div className='block'>
+            <h2>The best part?</h2> {/* block */}
+          </div>
+        </div>
+        <div className='section'>
+          <p>
+            It's comletely<span>FREE!</span>
+          </p>
+          <p>Try out the demo user today!</p>
+        </div>
+        <div className='section'>
+          <div className='block'>
+            <p>Ready to dive in?</p> {/* block */}
+            <Link className='session-signin-btn' to='/signup'>
+              Sign Up
+            </Link>
+          </div>
+        </div>
       </div>
       <div className='footer'>
         <div className='footer-row'>
