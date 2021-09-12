@@ -71,7 +71,7 @@ const Landing = () => {
         <div className='section'>
           <div className='block block-3'>
             <h2>THE BEST PART?</h2> {/* block */}
-            <p>It's comletely free!</p>
+            <p>It's completely free!</p>
             {/* <p>Try out the demo user today!</p> */}
           </div>
         </div>

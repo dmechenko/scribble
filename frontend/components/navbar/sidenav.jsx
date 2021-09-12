@@ -24,9 +24,13 @@ class Sidenav extends React.Component {
           <img className='pencil-logo' src={pencilLogo} />
           <p className='user-email'>{currentUser.email}</p>
         </div>
+        <button>
+          <Link to='/notes'>Home</Link>
+        </button>
         <button className='add-btn' onClick={() => this.handleCreate()}>
           Add Note
         </button>
+        <button>Notebooks</button>
         <ul className='side-nav-uc'>
           <li>
             <Link to='/' onClick={logout}>
