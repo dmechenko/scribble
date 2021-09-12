@@ -3,20 +3,61 @@
   background: image-url('winter-logo');
   height: 100vh;
   overflow: hidden;
+
+  .note-index-count {
+    height: auto;
+    display: flex;
+    padding: 18px 16px 0 24px;
+    border: 1px solid rgb(207, 207, 207);
+    flex-direction: column;
+    font-family: 'Nunito';
+    background: white;
+    p {
+      display: flex;
+      align-items: center;
+      // padding: 20px 20px 20px 0;
+    }
+    p:first-of-type {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    p:last-of-type {
+      margin-bottom: 10px;
+    }
+  }
 }
 
 .note-index-container {
   margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  // justify-content: space-between;
   overflow-y: scroll;
-  font-family: Calibri;
+  font-family: 'Nunito';
+
+  // .note-index-item div {
+  //   height: 100px;
+  // }
 
   .note-index-item-container {
+    overflow: hidden;
+    text-decoration: none;
     .note-index-item {
-      height: 100px;
+      // overflow-y: scroll;
+      color: #333333;
+      height: auto;
       border: 1px solid rgb(207, 207, 207);
+      display: flex;
+      flex-direction: column;
+      padding-left: 10px;
+      padding-bottom: 10px;
+      .body {
+        padding-bottom: 5px;
+      }
+      .note-updated {
+        padding-left: 5px;
+        font-size: 0.75rem;
+      }
     }
   }
 
@@ -31,11 +72,8 @@
   }
 }
 
-.note-index-container,
 .note-container {
-  margin-top: 10%;
   width: 100%;
-  max-width: 45%;
 }
 
 .note-container {

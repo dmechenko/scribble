@@ -6,10 +6,24 @@ class NoteIndex extends React.Component {
     this.props.fetchNotes();
   }
   render() {
+    // debugger;
     return (
-      <ul className='note-index-container'>
-        <NoteLis notes={this.props.notes} />
-      </ul>
+      // <ul className='note-index-container'>
+      //   <div className='note-index-count'>
+      //     <p>Notes</p>
+      //     <p>{this.props.notes.length} notes</p>
+      //   </div>
+      //   <NoteLis notes={this.props.notes} />
+      // </ul>
+      <div className='note-main'>
+        <div className='note-index-count'>
+          <p>Notes</p>
+          <p>{this.props.notes.length} notes</p>
+        </div>
+        <ul className='note-index-container'>
+          <NoteLis notes={this.props.notes} />
+        </ul>
+      </div>
     );
   }
 }
