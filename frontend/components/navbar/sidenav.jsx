@@ -1,5 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faHome,
+  faBook,
+  faSignOutAlt,
+  faPlusSquare,
+} from '@fortawesome/free-solid-svg-icons';
 
 class Sidenav extends React.Component {
   constructor(props) {
@@ -24,20 +31,24 @@ class Sidenav extends React.Component {
           <img className='pencil-logo' src={pencilLogo} />
           <p className='user-email'>{currentUser.email}</p>
         </div>
-        <button>
+        <button className='add-btn' onClick={() => this.handleCreate()}>
+          <FontAwesomeIcon className='plus-icon' icon={faPlusSquare} />
+          New
+        </button>
+        <button className='home-btn'>
+          <FontAwesomeIcon className='home-icon' icon={faHome} />
           <Link to='/notes'>Home</Link>
         </button>
-        <button className='add-btn' onClick={() => this.handleCreate()}>
-          Add Note
+        <button className='notebooks-btn'>
+          <FontAwesomeIcon className='book-icon' icon={faBook} />
+          <Link to='/notes'>Notebooks</Link>
         </button>
-        <button>Notebooks</button>
-        <ul className='side-nav-uc'>
-          <li>
-            <Link to='/' onClick={logout}>
-              Sign Out
-            </Link>
-          </li>
-        </ul>
+        <button className='logout-btn'>
+          <FontAwesomeIcon className='logout-icon' icon={faSignOutAlt} />
+          <Link to='/' onClick={logout}>
+            Logout
+          </Link>
+        </button>
       </div>
     );
   }
