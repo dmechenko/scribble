@@ -1,0 +1,16 @@
+.notebooks-main {
+  display: flex;
+  background: white;
+  width: 100%;
+  flex-direction: column;
+  .notebook-header {
+    margin-top: 50px;
+    display: flex;
+    background: lightgrey;
+    justify-content: space-around;
+  }
+  .notebook-index-item-container {
+    display: flex;
+    justify-content: space-around;
+  }
+}

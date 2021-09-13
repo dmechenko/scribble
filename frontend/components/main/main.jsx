@@ -14,7 +14,15 @@ class Main extends React.Component {
         <Route path='/notes/' component={NoteIndexContainer}></Route>
         <Route exact path='/notes/' component={NoteSide}></Route>
         <Route path='/notes/:noteId' component={NoteEditorContainer}></Route>
-        <Route path='/notebooks' component={NotebookIndexContainer}></Route>
+        <Route
+          exact
+          path='/notebooks'
+          component={NotebookIndexContainer}
+        ></Route>
+        <Route
+          path='/notebooks/:notebookId'
+          component={NoteIndexContainer}
+        ></Route>
       </div>
     );
   }

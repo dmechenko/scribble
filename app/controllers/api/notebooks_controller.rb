@@ -13,7 +13,7 @@ class Api::NotebooksController < ApplicationController
   end
 
   def index
-    debugger
+    # debugger
     @notebooks = @current_user.notebooks
     render '/api/notebooks/index'
   end
