@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactQuill from 'react-quill';
 import { debounce } from 'debounce';
+// import 'react-quill/dist/quill.snow.css';
 
 class NoteEditor extends React.Component {
   constructor(props) {
