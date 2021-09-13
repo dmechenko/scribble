@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 const NoteIndexItem = (props) => {
   if (!props.note) return null;
   let cleanBody = props.note.body.replace(/<[^>]+>/g, '');
-  debugger;
+  // debugger;
   return (
     <Link to={`/notes/${props.note.id}`}>
       <div className='note-index-item-container'>

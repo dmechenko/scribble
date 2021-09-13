@@ -1,4 +1,6 @@
 class Api::NotebooksController < ApplicationController
+  before_action :ensure_logged_in
+
   def create
     @notebook = Notebook.new(notebook_params)
     @notebook.author_id = @current_user.id
@@ -11,6 +13,7 @@ class Api::NotebooksController < ApplicationController
   end
 
   def index
+    debugger
     @notebooks = @current_user.notebooks
     render '/api/notebooks/index'
   end
