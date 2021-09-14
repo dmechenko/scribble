@@ -2,11 +2,21 @@ import React from 'react';
 import NotebookLis from './notebook_li';
 
 class NotebookIndex extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { notebooks: this.props.notebooks };
+  }
   componentDidMount() {
     this.props.fetchNotebooks();
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.notebooks !== prevProps.notebooks)
+      this.setState(this.props.notebooks);
+  }
+
   render() {
+    debugger;
     return (
       <div className='notebooks-main'>
         <div className='notebook-index-count'>
@@ -14,7 +24,15 @@ class NotebookIndex extends React.Component {
           <p>{this.props.notebooks.length} notebooks</p>
         </div>
         <ul className='notebook-index-container'>
-          <NotebookLis notebooks={this.props.notebooks} />
+          <NotebookLis
+            notebooks={this.props.notebooks}
+            user={this.props.user[0]}
+            fetchNotebook={this.props.fetchNotebook}
+            createNotebook={this.props.createNotebook}
+            deleteNotebook={this.props.deleteNotebook}
+            updateNotebook={this.props.updateNotebook}
+          />
+          <li>test</li>
         </ul>
       </div>
     );

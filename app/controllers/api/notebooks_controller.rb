@@ -19,14 +19,14 @@ class Api::NotebooksController < ApplicationController
 
   def show
     @notebook = Notebook.find_by(id: params[:id])
-    render '/api/notes/show'
+    render '/api/notebooks/show'
   end
 
   def update
     @notebook = Notebook.find_by(id: params[:id])
 
     if @notebook.update(notebook_params)
-      render '/api/notes/show'
+      render '/api/notebooks/show'
     else
       render json: @notebook.errors.full_messages, status: 422
     end
@@ -36,7 +36,7 @@ class Api::NotebooksController < ApplicationController
     @notebook = Notebook.find_by(id: params[:id])
 
     if @notebook.destroy
-      render '/api/notes/show'
+      render '/api/notebooks/show'
     else
       render json: @notebook.errors.full_messages, status: 422
     end

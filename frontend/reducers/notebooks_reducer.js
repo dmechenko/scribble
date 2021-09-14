@@ -13,7 +13,7 @@ const notebooksReducer = (oldState = {}, action) => {
     case RECEIVE_NOTEBOOK:
       nextState[action.notebook.id] = action.notebook;
     case REMOVE_NOTEBOOK:
-      delete nextState[action.notebook.id];
+      delete nextState[action.notebookId];
       return nextState;
     default:
       return oldState;

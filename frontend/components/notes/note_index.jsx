@@ -18,9 +18,9 @@ class NoteIndex extends React.Component {
         return Object.values(this.props.notes).length;
       }
     };
-    const notebookExists = () => {
-      this.props.notebookId ? this.props.notebookId : 'Notes';
-    };
+    // const notebookExists = () => {
+    //   this.props.notebookId ? this.props.notebookId : 'Notes';
+    // };
     return (
       // <ul className='note-index-container'>
       //   <div className='note-index-count'>
@@ -32,7 +32,9 @@ class NoteIndex extends React.Component {
       <div className='note-main'>
         <div className='note-index-count'>
           <p>
-            <FontAwesomeIcon icon={faStickyNote} />
+            <div className='notebook-icon'>
+              <FontAwesomeIcon icon={faStickyNote} />
+            </div>
             {/* Notes */}
             {this.props.notebookId ? this.props.notebookId.title : 'Notes'}
           </p>
