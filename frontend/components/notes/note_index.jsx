@@ -31,13 +31,13 @@ class NoteIndex extends React.Component {
       // </ul>
       <div className='note-main'>
         <div className='note-index-count'>
-          <p>
+          <span>
             <div className='notebook-icon'>
               <FontAwesomeIcon icon={faStickyNote} />
             </div>
             {/* Notes */}
             {this.props.notebookId ? this.props.notebookId.title : 'Notes'}
-          </p>
+          </span>
           <p>{notesArray()} notes</p>
         </div>
         <ul className='note-index-container'>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import Dropdown from 'react-dropdown';
 
 class NotebookIndexItem extends React.Component {
   constructor(props) {
@@ -12,6 +13,8 @@ class NotebookIndexItem extends React.Component {
 
   render() {
     // debugger;
+    const options = ['one', 'two', 'three'];
+    const defaultOption = options[0];
 
     return (
       <div className='notebook-index-item-container'>
@@ -28,6 +31,12 @@ class NotebookIndexItem extends React.Component {
           >
             Delete Notebook
           </button>
+          {/* <Dropdown
+            options={options}
+            onChange={this._onSelect}
+            value={defaultOption}
+            placeholder='Select an option'
+          ></Dropdown> */}
         </div>
       </div>
     );

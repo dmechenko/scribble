@@ -40,7 +40,7 @@
     font-family: 'Nunito';
     background: rgb(248, 248, 248);
     width: 317px;
-    p {
+    span {
       display: flex;
       align-items: center;
       color: rgba(0, 0, 0, 0.678);
@@ -48,7 +48,7 @@
         margin-right: 10px;
       }
     }
-    p:first-of-type {
+    span:first-of-type {
       font-size: 1.5rem;
       margin-bottom: 20px;
       display: flex;
@@ -56,7 +56,7 @@
       width: 100%;
       // justify-content: space-between;
     }
-    p:last-of-type {
+    p {
       font-size: 0.86rem;
       margin-bottom: 10px;
     }
