@@ -81,6 +81,35 @@ class NoteEditor extends React.Component {
   }
 
   render() {
+    const formats = [
+      'header',
+      'font',
+      'size',
+      'bold',
+      'italic',
+      'underline',
+      'blockquote',
+      'list',
+      'bullet',
+      'indent',
+      'link',
+      'image',
+      'video',
+      'color',
+    ];
+
+    const modules = {
+      toolbar: [
+        [{ header: '1' }, { header: '2' }, { font: [] }],
+        [{ size: [] }],
+        ['bold', 'italic', 'underline'],
+        [{ list: 'ordered' }, { list: 'bullet' }],
+        [{ color: [] }, { background: [] }],
+        ['link', 'image', 'video'],
+        ['clean'],
+      ],
+    };
+
     return (
       <div className='note-container'>
         <div className='note-title-container'>
@@ -94,6 +123,8 @@ class NoteEditor extends React.Component {
         <div className='quill-container'>
           <ReactQuill
             theme='snow'
+            modules={modules}
+            formats={formats}
             value={this.state.body}
             placeholder='start scribbling'
             onChange={debounce(
