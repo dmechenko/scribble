@@ -6,9 +6,21 @@ import { faStickyNote } from '@fortawesome/free-solid-svg-icons';
 class NoteIndex extends React.Component {
   componentDidMount() {
     this.props.fetchNotes();
+    this.props.fetchNotebooks();
   }
   render() {
-    // debugger;
+    const notesArray = () => {
+      if (this.props.notebookId) {
+        return Object.values(this.props.notes).filter(
+          (note) => note.notebook_id === this.props.notebookId.id
+        ).length;
+      } else {
+        return Object.values(this.props.notes).length;
+      }
+    };
+    const notebookExists = () => {
+      this.props.notebookId ? this.props.notebookId : 'Notes';
+    };
     return (
       // <ul className='note-index-container'>
       //   <div className='note-index-count'>
@@ -21,12 +33,16 @@ class NoteIndex extends React.Component {
         <div className='note-index-count'>
           <p>
             <FontAwesomeIcon icon={faStickyNote} />
-            Notes
+            {/* Notes */}
+            {this.props.notebookId ? this.props.notebookId.title : 'Notes'}
           </p>
-          <p>{this.props.notes.length} notes</p>
+          <p>{notesArray()} notes</p>
         </div>
         <ul className='note-index-container'>
-          <NoteLis notes={this.props.notes} />
+          <NoteLis
+            notes={this.props.notes}
+            notebookId={this.props.notebookId}
+          />
         </ul>
       </div>
     );

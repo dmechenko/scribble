@@ -3,7 +3,6 @@ import { Link, withRouter } from 'react-router-dom';
 
 const NotebookIndexItem = (props) => {
   if (!props.notebook) return null;
-  // debugger;
   return (
     <div className='notebook-index-item-container'>
       <div className='notebook-index-item'></div>
