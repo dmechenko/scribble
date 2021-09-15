@@ -25,7 +25,7 @@ class NotebookLis extends React.Component {
     return (
       <div className='notebook-item-main'>
         <button
-          onClick={() => this.handleCreate()}
+          onClick={() => this.props.openModal('create-notebook')}
           className='notebook-action-btn'
         >
           Add Notebook

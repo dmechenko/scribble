@@ -51,7 +51,7 @@ class NoteEditor extends React.Component {
   }
 
   render() {
-    debugger;
+    // debugger;
     const formats = [
       'header',
       'font',
@@ -102,7 +102,7 @@ class NoteEditor extends React.Component {
                 this.setState({ body: value }, () =>
                   this.props.updateNote(this.state)
                 ),
-              200
+              3000
             )}
           />
         </div>

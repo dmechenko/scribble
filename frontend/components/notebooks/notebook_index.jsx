@@ -1,6 +1,6 @@
 import React from 'react';
 import NotebookLis from './notebook_li';
-
+import Modal from '../modal/modal';
 class NotebookIndex extends React.Component {
   constructor(props) {
     super(props);
@@ -16,13 +16,14 @@ class NotebookIndex extends React.Component {
   }
 
   render() {
-    debugger;
+    // debugger;
     return (
       <div className='notebooks-main'>
         <div className='notebook-index-count'>
           <p>Notebooks</p>
           <p>{this.props.notebooks.length} notebooks</p>
         </div>
+        <Modal />
         <ul className='notebook-index-container'>
           <NotebookLis
             notebooks={this.props.notebooks}
@@ -31,6 +32,7 @@ class NotebookIndex extends React.Component {
             createNotebook={this.props.createNotebook}
             deleteNotebook={this.props.deleteNotebook}
             updateNotebook={this.props.updateNotebook}
+            openModal={this.props.openModal}
           />
           <li>test</li>
         </ul>

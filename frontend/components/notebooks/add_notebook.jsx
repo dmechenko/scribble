@@ -45,6 +45,7 @@ class AddNotebook extends React.Component {
                   placeholder='Enter a title for your new notebook'
                 />
               </label>
+              <button>Add New Notebook</button>
             </form>
           </div>
         </div>

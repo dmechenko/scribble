@@ -1,6 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
+import AddNotebook from '../notebooks/add_notebook';
 
 const Modal = ({ modal, closeModal }) => {
   if (!modal) return null;
@@ -13,7 +14,7 @@ const Modal = ({ modal, closeModal }) => {
     default:
       return null;
   }
-
+  // debugger;
   return (
     <div className='modal-background' onClick={closeModal}>
       <div className='modal-child' onClick={(e) => e.stopPropagation()}>
