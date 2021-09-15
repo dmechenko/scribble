@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import AddNotebook from '../notebooks/add_notebook';
+import EditNotebook from '../notebooks/edit_notebook';
 
 const Modal = ({ modal, closeModal }) => {
   if (!modal) return null;
@@ -10,6 +11,9 @@ const Modal = ({ modal, closeModal }) => {
   switch (modal) {
     case 'create-notebook':
       component = <AddNotebook />;
+      break;
+    case 'edit-notebook':
+      component = <EditNotebook />;
       break;
     default:
       return null;

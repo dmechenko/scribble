@@ -7,9 +7,27 @@ class NotebookIndexItem extends React.Component {
     super(props);
   }
 
-  handleDelete() {
-    this.props.deleteNotebook(this.props.notebook.id);
+  handleDelete(e) {
+    e.stopPropagation();
+    confirm(
+      'Are you certain you want to delete this notebook?\nAll associated notes will be lost.'
+    )
+      ? this.props.deleteNotebook(this.props.notebook.id)
+      : null;
   }
+
+  // userConfirm() {
+  //   let decision;
+  //   const areYouSure = confirm(
+  //     'Are you certain you want to delete this notebook?\nAll associated notes will be lost.'
+  //   );
+  //   if (areYouSure) {
+  //     decision = true;
+  //   } else {
+  //     decision = false;
+  //   }
+  //   if (decision) this.handleDelete();
+  // }
 
   render() {
     // debugger;
@@ -26,7 +44,7 @@ class NotebookIndexItem extends React.Component {
         <div className='notebook-updated'>{this.props.notebook.updated_at}</div>
         <div className='notebook-actions'>
           <button
-            onClick={() => this.handleDelete()}
+            onClick={(e) => this.handleDelete(e)}
             className='notebook-action-btn'
           >
             Delete Notebook

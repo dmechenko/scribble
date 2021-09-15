@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
+import { openModal } from '../../actions/modal_actions';
 import { fetchNotes } from '../../actions/note_actions';
 import { fetchNotebooks } from '../../actions/notebook_actions';
 import NoteIndex from './note_index';
+import { withRouter } from 'react-router-dom';
 
 const mSTP = (state, ownProps) => {
   // debugger;
@@ -15,6 +17,7 @@ const mDTP = (dispatch) => ({
   fetchNotes: () => dispatch(fetchNotes()),
   fetchNotebooks: () => dispatch(fetchNotebooks()),
   // fetchNotebook: (notebookId) => dispatch(fetchNotebook(notebookId)),
+  openModal: (modal) => dispatch(openModal(modal)),
 });
 
-export default connect(mSTP, mDTP)(NoteIndex);
+export default withRouter(connect(mSTP, mDTP)(NoteIndex));

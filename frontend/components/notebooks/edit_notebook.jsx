@@ -1,32 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { closeModal } from '../../actions/modal_actions';
-import { createNotebook } from '../../actions/notebook_actions';
+import { updateNotebook } from '../../actions/notebook_actions';
 
-class AddNotebook extends React.Component {
+class EditNotebook extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      title: '',
-    };
+    this.state = this.props.notebook;
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNotebook(this.state).then(() => this.props.closeModal());
-    // reset title for each new notebook
-    this.setState({ title: '' });
+    this.props.updateNotebook(this.state).then(() => this.props.closeModal());
   }
 
   handleChange(field) {
     return (e) => this.setState({ [field]: e.target.value });
   }
+
   render() {
     return (
       <div className='modal-container'>
         <div className='modal-main'>
           <div className='modal-title'>
-            <p className='modal-type'>Add a Notebook</p>
+            <p className='modal-type'>Rename Notebook</p>
             <div
               onClick={() => this.props.closeModal()}
               className='close-modal'
@@ -45,7 +43,7 @@ class AddNotebook extends React.Component {
                   placeholder='Enter a title for your new notebook'
                 />
               </label>
-              <button>Add New Notebook</button>
+              <button>Continue</button>
             </form>
           </div>
         </div>
@@ -54,9 +52,13 @@ class AddNotebook extends React.Component {
   }
 }
 
-const mDTP = (dispatch) => ({
-  closeModal: () => dispatch(closeModal()),
-  createNotebook: (notebook) => dispatch(createNotebook(notebook)),
+const mSTP = (state, ownProps) => ({
+  notebook: state.entities.notebooks[ownProps.match.params.notebookId],
 });
 
-export default connect(null, mDTP)(AddNotebook);
+const mDTP = (dispatch) => ({
+  closeModal: () => dispatch(closeModal()),
+  updateNotebook: (notebook) => dispatch(updateNotebook(notebook)),
+});
+
+export default withRouter(connect(mSTP, mDTP)(EditNotebook));

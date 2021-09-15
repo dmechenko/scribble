@@ -1,5 +1,6 @@
 import React from 'react';
 import NoteLis from './note_li';
+import Modal from '../modal/modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStickyNote } from '@fortawesome/free-solid-svg-icons';
 
@@ -18,18 +19,21 @@ class NoteIndex extends React.Component {
         return Object.values(this.props.notes).length;
       }
     };
-    // const notebookExists = () => {
-    //   this.props.notebookId ? this.props.notebookId : 'Notes';
-    // };
+
+    const modalDisplay = (
+      <div>
+        <button
+          onClick={() => this.props.openModal('edit-notebook')}
+          className='notebook-edit-btn'
+        >
+          Rename Notebook
+        </button>
+      </div>
+    );
+
     return (
-      // <ul className='note-index-container'>
-      //   <div className='note-index-count'>
-      //     <p>Notes</p>
-      //     <p>{this.props.notes.length} notes</p>
-      //   </div>
-      //   <NoteLis notes={this.props.notes} />
-      // </ul>
       <div className='note-main'>
+        <Modal />
         <div className='note-index-count'>
           <span>
             <div className='notebook-icon'>
@@ -39,11 +43,13 @@ class NoteIndex extends React.Component {
             {this.props.notebookId ? this.props.notebookId.title : 'Notes'}
           </span>
           <p>{notesArray()} notes</p>
+          <div>{this.props.notebookId ? modalDisplay : null}</div>
         </div>
         <ul className='note-index-container'>
           <NoteLis
             notes={this.props.notes}
             notebookId={this.props.notebookId}
+            openModal={this.props.openModal}
           />
         </ul>
       </div>

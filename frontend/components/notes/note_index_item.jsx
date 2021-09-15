@@ -42,8 +42,16 @@ const NoteIndexItem = (props) => {
     }
   };
 
+  let notebookPath = props.match.params.notebookId;
+  // debugger;
+  let path;
+  if (notebookPath) {
+    path = `/notebooks/${notebookPath}/notes/${props.note.id}`;
+  } else {
+    path = `/notes/${props.note.id}`;
+  }
   return (
-    <Link to={`/notes/${props.note.id}`}>
+    <Link to={`${path}`}>
       <div className='note-index-item-container'>
         <div className='note-index-item'>
           <div className='title'>{props.note.title}</div>

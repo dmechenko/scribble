@@ -20,8 +20,12 @@ class Main extends React.Component {
           component={NotebookIndexContainer}
         ></Route>
         <Route
-          path='/notebooks/:notebookId'
+          path='/notebooks/:notebookId/notes'
           component={NoteIndexContainer}
+        ></Route>
+        <Route
+          path='/notebooks/:notebookId/notes/:noteId'
+          component={NoteEditorContainer}
         ></Route>
       </div>
     );

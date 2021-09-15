@@ -16,7 +16,6 @@ class NotebookIndex extends React.Component {
   }
 
   render() {
-    // debugger;
     return (
       <div className='notebooks-main'>
         <div className='notebook-index-count'>

@@ -31,12 +31,12 @@ class Navbar extends React.Component {
                 WHY SCRIBBLE
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href='#'>FEATURES</a>
             </li>
             <li>
               <a href='#'>PLANS</a>
-            </li>
+            </li> */}
           </ul>
           {/* </div> */}
           <ul className='nav-entry'>

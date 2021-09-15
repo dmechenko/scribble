@@ -17,19 +17,31 @@ class Sidenav extends React.Component {
     let note = {
       title: 'Untitled',
       body: '',
+      notebook_id: this.props.history.location.pathname.split('/')[2],
     };
-    this.props.createNote(note).then((object) => {
-      this.props.history.push(`/notes/${object.note.id}`);
-    });
+    // debugger;
+    let notebookPathId = note.notebook_id;
+    note.notebook_id
+      ? // ? this.props.createNote(note).then((object) => {
+        //     this.props.history.location.pathname = '/';
+        //     this.props.history.replace(
+        //       `notebooks/${notebookPathId}/notes/${object.note.id}`
+        //     );
+        //   })
+        this.props.createNote(note).then((object) => {
+          this.props.history.push(`/notes/${object.note.id}`);
+        })
+      : this.props.createNote(note).then((object) => {
+          this.props.history.push(`/notes/${object.note.id}`);
+        });
   }
 
   render() {
-    let { logout, currentUser } = this.props;
     return (
       <div className='side-nav'>
         <div className='user-info'>
           <img className='pencil-logo' src={pencilLogo} />
-          <p className='user-email'>{currentUser.email}</p>
+          <p className='user-email'>{this.props.currentUser.email}</p>
         </div>
         <button className='add-btn' onClick={() => this.handleCreate()}>
           <FontAwesomeIcon className='plus-icon' icon={faPlusSquare} />
@@ -45,7 +57,7 @@ class Sidenav extends React.Component {
         </button>
         <button className='logout-btn'>
           <FontAwesomeIcon className='logout-icon' icon={faSignOutAlt} />
-          <Link to='/' onClick={logout}>
+          <Link to='/' onClick={this.props.logout}>
             Logout
           </Link>
         </button>

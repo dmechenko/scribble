@@ -38,16 +38,17 @@ class NoteEditor extends React.Component {
   }
 
   deleteNote() {
-    let notes = Object.values(this.props.notes);
+    let notes = Object.values(this.props.notes); //notes array
     let nextNote;
     notes.length > 1 ? (nextNote = notes[notes.length - 2].id) : nextNote;
-    nextNote
+    //if there are any notes left, set nextNote to be the id of the second to last note in the array
+    nextNote //if there is a next note, change url to the next id
       ? this.props
           .deleteNote(this.state.id)
           .then(this.props.history.push(`/notes/${nextNote}`))
       : this.props
           .deleteNote(this.state.id)
-          .then(this.props.history.push(`/notes/`));
+          .then(this.props.history.push(`/notes/`)); // otherwise, just go back to notes main
   }
 
   render() {
@@ -102,7 +103,7 @@ class NoteEditor extends React.Component {
                 this.setState({ body: value }, () =>
                   this.props.updateNote(this.state)
                 ),
-              3000
+              3000 //update every 3 seconds
             )}
           />
         </div>
