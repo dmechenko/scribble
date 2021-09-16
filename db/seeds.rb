@@ -14,73 +14,73 @@ Note.delete_all
 demo_user = User.create!(email: 'pencil@scribble.com', password: 'scribblin')
 
 notebook_seed1 = Notebook.create!(
-  title: Faker::Music.album,
+  title: 'My First Notebook',
   author_id: demo_user.id
 )
 notebook_seed2 = Notebook.create!(
-  title: Faker::Music.album,
+  title: 'Grocery List',
   author_id: demo_user.id
 )
 notebook_seed3 = Notebook.create!(
-  title: Faker::Music.album,
+  title: 'To-do for the Week',
   author_id: demo_user.id
 )
 
 note_seed1 = Note.create!(
-  title: Faker::Company.catch_phrase,
-  body: Faker::TvShows::Seinfeld.quote,
+  title: Faker::GreekPhilosophers.quote,
+  body: Faker::Quote.matz,
   author_id: demo_user.id,
 )
 note_seed2 = Note.create!(
-  title: Faker::Company.catch_phrase,
-  body: Faker::TvShows::Seinfeld.quote,
+  title: Faker::GreekPhilosophers.quote,
+  body: Faker::Quote.matz,
   author_id: demo_user.id,
 )
 note_seed3 = Note.create!(
-  title: Faker::Company.catch_phrase,
-  body: Faker::TvShows::Seinfeld.quote,
+  title: Faker::GreekPhilosophers.quote,
+  body: Faker::Quote.matz,
   author_id: demo_user.id,
   notebook_id: notebook_seed1.id
 )
 note_seed4 = Note.create!(
-  title: Faker::Company.catch_phrase,
-  body: Faker::TvShows::Seinfeld.quote,
+  title: Faker::GreekPhilosophers.quote,
+  body: Faker::Quote.yoda,
   author_id: demo_user.id,
   notebook_id: notebook_seed1.id
 )
 note_seed5 = Note.create!(
-  title: Faker::Company.catch_phrase,
-  body: Faker::TvShows::Seinfeld.quote,
+  title: Faker::GreekPhilosophers.quote,
+  body: Faker::Quote.yoda,
   author_id: demo_user.id,
   notebook_id: notebook_seed2.id
 )
 note_seed6 = Note.create!(
-  title: Faker::Company.catch_phrase,
-  body: Faker::TvShows::Seinfeld.quote,
+  title: Faker::GreekPhilosophers.quote,
+  body: Faker::Quote.yoda,
   author_id: demo_user.id,
   notebook_id: notebook_seed2.id
 )
 note_seed7 = Note.create!(
-  title: Faker::Company.catch_phrase,
-  body: Faker::TvShows::Seinfeld.quote,
+  title: Faker::GreekPhilosophers.quote,
+  body: Faker::Quote.yoda,
   author_id: demo_user.id,
   notebook_id: notebook_seed2.id
 )
 note_seed8 = Note.create!(
-  title: Faker::Company.catch_phrase,
-  body: Faker::TvShows::Seinfeld.quote,
+  title: Faker::GreekPhilosophers.quote,
+  body: Faker::Quote.most_interesting_man_in_the_world,
   author_id: demo_user.id,
   notebook_id: notebook_seed2.id
 )
 note_seed9 = Note.create!(
-  title: Faker::Company.catch_phrase,
-  body: Faker::TvShows::Seinfeld.quote,
+  title: Faker::GreekPhilosophers.quote,
+  body: Faker::Quote.most_interesting_man_in_the_world,
   author_id: demo_user.id,
   notebook_id: notebook_seed3.id
 )
 note_seed10 = Note.create!(
-  title: Faker::Company.catch_phrase,
-  body: Faker::TvShows::Seinfeld.quote,
+  title: Faker::GreekPhilosophers.quote,
+  body: Faker::Quote.most_interesting_man_in_the_world,
   author_id: demo_user.id,
   notebook_id: notebook_seed3.id
 )
