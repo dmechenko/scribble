@@ -2,10 +2,13 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Dropdown from 'react-dropdown';
 import { cleanDate } from '../../util/helper_util';
+import { openModal } from '../../actions/modal_actions';
+import Modal from '../modal/modal';
 
 class NotebookIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = this.props.notebook;
   }
 
   handleDelete(e) {
@@ -16,6 +19,13 @@ class NotebookIndexItem extends React.Component {
       ? this.props.deleteNotebook(this.props.notebook.id)
       : null;
   }
+
+  // handleRename(e) {
+  //   e.stopPropagation();
+  //   this.props
+  //     .fetchNotebook(this.state.id)
+  //     .then(() => this.props.openModal('edit-notebook'));
+  // }
 
   // userConfirm() {
   //   let decision;
@@ -31,13 +41,18 @@ class NotebookIndexItem extends React.Component {
   // }
 
   render() {
+    // debugger;
     // const options = ['one', 'two', 'three'];
     // const defaultOption = options[0];
 
     return (
       <div className='notebook-index-item-container'>
+        <Modal />
         <div className='notebook-index-item'></div>
-        <Link to={`/notebooks/${this.props.notebook.id}/notes`}>
+        <Link
+          className='nb-link'
+          to={`/notebooks/${this.props.notebook.id}/notes`}
+        >
           <div className='notebook-title'>{this.props.notebook.title}</div>
         </Link>
         <div className='notebook-author'>{this.props.user.email}</div>
@@ -49,8 +64,14 @@ class NotebookIndexItem extends React.Component {
             onClick={(e) => this.handleDelete(e)}
             className='notebook-action-btn'
           >
-            Delete Notebook
+            Delete
           </button>
+          {/* <button
+            onClick={(e) => this.handleRename(e)}
+            className='notebook-action-btn'
+          >
+            Rename
+          </button> */}
           {/* <Dropdown
             options={options}
             onChange={this._onSelect}

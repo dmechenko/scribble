@@ -1,5 +1,7 @@
 import React from 'react';
 import NotebookIndexItem from './notebook_index_item';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBookMedical } from '@fortawesome/free-solid-svg-icons';
 
 class NotebookLis extends React.Component {
   handleCreate() {
@@ -19,6 +21,7 @@ class NotebookLis extends React.Component {
         createNotebook={this.props.createNotebook}
         deleteNotebook={this.props.deleteNotebook}
         updateNotebook={this.props.updateNotebook}
+        openModal={this.props.openModal}
       />
     ));
     // debugger;
@@ -26,15 +29,16 @@ class NotebookLis extends React.Component {
       <div className='notebook-item-main'>
         <button
           onClick={() => this.props.openModal('create-notebook')}
-          className='notebook-action-btn'
+          className='notebook-add-btn'
         >
+          <FontAwesomeIcon className='add-nb-icon' icon={faBookMedical} />
           Add Notebook
         </button>
         <div className='notebook-header'>
-          <p>TITLE</p>
-          <p>CREATED BY</p>
-          <p>UPDATED</p>
-          <p>ACTIONS</p>
+          <p className='nb-header-title'>TITLE</p>
+          <p className='nb-header-author'>CREATED BY</p>
+          <p className='nb-header-update'>UPDATED</p>
+          <p className='nb-header-action'>ACTIONS</p>
         </div>
         <li>{notebookItem}</li>
       </div>

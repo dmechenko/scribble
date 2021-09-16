@@ -13,15 +13,28 @@ class NoteSide extends React.Component {
     });
   }
 
+  handleRedirect() {
+    window.location = 'https://dmechenko.github.io/aA-SnowBrawl/';
+  }
+
   // handleDrag() {
   //   $(function () {
   //     $('.scratchpad').draggable();
   //   });
   // }
   render() {
+    const options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
+    let today = new Date();
     return (
-      <div>
-        <h1 className='time-header'>THE TIME IS NOW</h1>
+      <div className='side-main-cont'>
+        <h1 className='time-header'>
+          {today.toLocaleDateString('en-US', options)}
+        </h1>
         <div className='side-pieces'>
           <div //onDrag={this.handleDrag}
             className='scratchpad'
@@ -34,7 +47,11 @@ class NoteSide extends React.Component {
             ></textarea>
           </div>
           <div className='game-container'>
-            <button className='game-btn'>Game goes Here</button>
+            <button onClick={() => this.handleRedirect()} className='game-btn'>
+              <p> Time for a short break?</p>
+              <p>Try SnowBrawl!</p>
+              <img className='snow-link' src={snowLink} />
+            </button>
           </div>
           <div className='add-note-secondary'>
             <button

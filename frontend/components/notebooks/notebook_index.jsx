@@ -19,10 +19,14 @@ class NotebookIndex extends React.Component {
     return (
       <div className='notebooks-main'>
         <div className='notebook-index-count'>
-          <p>Notebooks</p>
-          <p>{this.props.notebooks.length} notebooks</p>
+          <p className='notebook-index-header'>Notebooks</p>
         </div>
-        <Modal />
+        <div className='notebook-index-header-2'>
+          <p className='notebook-subheader'>
+            {this.props.notebooks.length} notebooks
+          </p>
+          <Modal />
+        </div>
         <ul className='notebook-index-container'>
           <NotebookLis
             notebooks={this.props.notebooks}
@@ -33,7 +37,6 @@ class NotebookIndex extends React.Component {
             updateNotebook={this.props.updateNotebook}
             openModal={this.props.openModal}
           />
-          <li>test</li>
         </ul>
       </div>
     );
