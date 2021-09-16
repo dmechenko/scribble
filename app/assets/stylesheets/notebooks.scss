@@ -32,7 +32,10 @@
     }
   }
   .notebook-index-item-container {
+    font-size: 12px;
     display: flex;
+    align-items: center;
+    height: 30px;
   }
   .notebook-title {
     width: 45%;
@@ -41,10 +44,33 @@
 
   .notebook-author,
   .notebook-updated {
-    width: 18%;
+    width: 18.75%;
   }
   .nb-link {
     width: 40.5%;
+    color: black;
+    text-decoration: none;
+  }
+
+  .notebook-actions {
+    width: 19.5%;
+    display: flex;
+    justify-content: flex-end;
+    right: 10px;
+  }
+
+  .notebook-action-btn {
+    border: none;
+    background: #d04f4f;
+    border-radius: 3px;
+    color: white;
+    margin-right: 3px;
+    cursor: pointer;
+  }
+
+  .notebook-action-btn:hover {
+    transition: 0.1s ease-in;
+    background: #a83c3c;
   }
 }
 .notebook-index-header,
