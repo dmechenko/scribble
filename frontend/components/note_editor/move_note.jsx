@@ -12,30 +12,29 @@ class MoveNote extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchNote();
+    this.props.fetchNote(this.props.note.id);
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.updateNote(this.state).then(() => this.props.closeModal());
+  changeNotebook(notebook) {
+    this.setState({
+      ['notebook_id']: notebook.id,
+    });
   }
 
-  handleMove(targetNotebook) {
-    this.setState({ notebookId: targetNotebook.id }),
-      () =>
-        this.props
-          .updateNote(this.state)
-          .then(
-            this.props.history.push(
-              `/notebooks/${targetNotebook.id}/notes/${this.props.note.id}`
-            )
-          )
-          .then(this.props.closeModal());
+  handleMove() {
+    this.props
+      .updateNote(this.state)
+      .then(
+        this.props.history.push(
+          `/notebooks/${this.state.notebook_id}/notes/${this.state.id}`
+        )
+      )
+      .then(() => this.props.closeModal());
   }
+
+  //e.currentTarget.__reactFiber$kguov6shfk8.key
 
   render() {
-    debugger;
-    let newNotebook;
     return (
       <div className='modal-container'>
         <div className='modal-main'>
@@ -52,7 +51,8 @@ class MoveNote extends React.Component {
             <ul>
               {this.props.notebooks.map((notebook) => (
                 <li
-                  onClick={() => (newNotebook = notebook)}
+                  value={notebook.id}
+                  onClick={() => this.changeNotebook(notebook)}
                   className='modal-notebook-list-item'
                   key={notebook.id}
                 >
@@ -62,9 +62,7 @@ class MoveNote extends React.Component {
             </ul>
           </div>
           <div className='modal-move-btn'>
-            <button onClick={() => this.handleMove(newNotebook)}>
-              Continue
-            </button>
+            <button onClick={() => this.handleMove()}>Continue</button>
             <button onClick={() => this.props.closeModal()}>Cancel</button>
           </div>
         </div>
@@ -74,10 +72,10 @@ class MoveNote extends React.Component {
 }
 
 const mSTP = (state, ownProps) => {
-  // debugger;
+  debugger;
   return {
     note: state.entities.notes[
-      ownProps.history.location.pathname.split('/')[2]
+      ownProps.history.location.pathname.split('/').slice(-1)
     ],
     notebooks: Object.values(state.entities.notebooks),
   };
