@@ -16,13 +16,13 @@ class NoteEditor extends React.Component {
 
   componentDidMount() {
     this.props.fetchNotes();
-    // this.props.fetchNote(this.props.match.params.noteId).then((object) => {
-    //   this.setState({
-    //     title: object.note.title,
-    //     body: object.note.body,
-    //     updated_at: this.state.updated_at,
-    //   });
-    // });
+    this.props.fetchNote(this.props.match.params.noteId).then((object) => {
+      this.setState({
+        title: object.note.title,
+        body: object.note.body,
+        updated_at: this.state.updated_at,
+      });
+    });
   }
 
   componentDidUpdate(prevProps) {
@@ -89,6 +89,12 @@ class NoteEditor extends React.Component {
             value={this.state.title}
             onChange={this.handleChange('title')}
           />
+          <button
+            className='move-note-btn'
+            onClick={() => this.props.openModal('move-note')}
+          >
+            Move
+          </button>
           <button onClick={() => this.deleteNote()}>Delete</button>
         </div>
         <div className='quill-container'>
@@ -100,9 +106,9 @@ class NoteEditor extends React.Component {
             placeholder='start scribbling'
             onChange={debounce(
               (value) =>
-                this.setState({ body: value }, () =>
-                  this.props.updateNote(this.state)
-                ),
+                this.setState({ body: value }, () => {
+                  this.props.updateNote(this.state);
+                }),
               3000 //update every 3 seconds
             )}
           />

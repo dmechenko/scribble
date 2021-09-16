@@ -22,16 +22,16 @@ class Sidenav extends React.Component {
     // debugger;
     let notebookPathId = note.notebook_id;
     note.notebook_id
-      ? // ? this.props.createNote(note).then((object) => {
-        //     this.props.history.location.pathname = '/';
-        //     this.props.history.replace(
-        //       `notebooks/${notebookPathId}/notes/${object.note.id}`
-        //     );
-        //   })
-        this.props.createNote(note).then((object) => {
-          this.props.history.push(`/notes/${object.note.id}`);
+      ? this.props.createNote(note).then((object) => {
+          this.props.history.location.pathname = '/';
+          this.props.history.replace(
+            `notebooks/${notebookPathId}/notes/${object.note.id}`
+          );
         })
-      : this.props.createNote(note).then((object) => {
+      : // this.props.createNote(note).then((object) => {
+        //   this.props.history.push(`/notes/${object.note.id}`);
+        // })
+        this.props.createNote(note).then((object) => {
           this.props.history.push(`/notes/${object.note.id}`);
         });
   }

@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { openModal } from '../../actions/modal_actions';
 import {
   createNote,
   fetchNote,
@@ -24,6 +25,7 @@ const mDTP = (dispatch) => ({
   createNote: (note) => dispatch(createNote(note)),
   updateNote: (note) => dispatch(updateNote(note)),
   deleteNote: (noteId) => dispatch(deleteNote(noteId)),
+  openModal: (modal) => dispatch(openModal(modal)),
 });
 
 export default connect(mSTP, mDTP)(NoteEditor);
