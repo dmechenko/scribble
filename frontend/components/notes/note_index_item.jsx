@@ -1,3 +1,4 @@
+import parse from 'html-react-parser';
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
@@ -55,7 +56,8 @@ const NoteIndexItem = (props) => {
       <div className='note-index-item-container'>
         <div className='note-index-item'>
           <div className='title'>{props.note.title}</div>
-          <div className='body'>{cleanBody}</div>
+          {/* <div className='body'>{cleanBody}</div> */}
+          <div className='body'>{parse(props.note.body)}</div>
           <div className='note-updated'>
             {formatDate(props.note.updated_at)}
           </div>
