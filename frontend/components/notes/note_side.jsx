@@ -20,21 +20,31 @@ class NoteSide extends React.Component {
   // }
   render() {
     return (
-      <div className='side-pieces'>
-        <div //onDrag={this.handleDrag}
-          className='scratchpad'
-        >
-          <h1>SCRATCH PAD</h1>
-          <textarea
-            cols='30'
-            rows='10'
-            placeholder="Start scribblin'"
-          ></textarea>
-        </div>
-        <div className='add-note-secondary'>
-          <button className='add-btn' onClick={() => this.handleCreate()}>
-            New
-          </button>
+      <div>
+        <h1 className='time-header'>THE TIME IS NOW</h1>
+        <div className='side-pieces'>
+          <div //onDrag={this.handleDrag}
+            className='scratchpad'
+          >
+            <h1>SCRATCH PAD</h1>
+            <textarea
+              cols='30'
+              rows='10'
+              placeholder="Start scribblin'"
+            ></textarea>
+          </div>
+          <div className='game-container'>
+            <button className='game-btn'>Game goes Here</button>
+          </div>
+          <div className='add-note-secondary'>
+            <button
+              className='add-btn-side'
+              onClick={() => this.handleCreate()}
+            >
+              <img src={newNote} className='new-note-icon' />
+              Create a New Note
+            </button>
+          </div>
         </div>
       </div>
     );

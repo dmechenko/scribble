@@ -157,11 +157,19 @@
 }
 
 .side-pieces {
-  display: flex;
+  // display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* grid-auto-rows: 350px; */
+  margin: 0 30px;
+  grid-column-gap: 50px;
+  align-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
   .scratchpad {
     background: rgb(255, 237, 142);
     height: 250px;
@@ -169,6 +177,8 @@
     border: 0px solid black;
     border-radius: 12px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
     h1 {
       margin: 15px 15px 0 15px;
     }
@@ -187,5 +197,43 @@
   }
   .add-note-secondary {
     margin-top: 30px;
+    display: flex;
+    justify-content: center;
   }
+}
+
+.add-btn-side {
+  height: 150px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 15px;
+  background: white;
+  cursor: pointer;
+  .new-note-icon {
+    height: 75px;
+    margin-bottom: 10px;
+  }
+}
+.add-btn-side:hover {
+  transition: 0.1s ease-in;
+  background: rgb(219, 244, 247);
+}
+
+.game-btn {
+  width: 250px;
+  height: 250px;
+  border: none;
+  border-radius: 15px;
+  background: white;
+}
+
+.time-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
