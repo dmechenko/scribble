@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Dropdown from 'react-dropdown';
+import { cleanDate } from '../../util/helper_util';
 
 class NotebookIndexItem extends React.Component {
   constructor(props) {
@@ -30,9 +31,8 @@ class NotebookIndexItem extends React.Component {
   // }
 
   render() {
-    // debugger;
-    const options = ['one', 'two', 'three'];
-    const defaultOption = options[0];
+    // const options = ['one', 'two', 'three'];
+    // const defaultOption = options[0];
 
     return (
       <div className='notebook-index-item-container'>
@@ -41,7 +41,9 @@ class NotebookIndexItem extends React.Component {
           <div className='notebook-title'>{this.props.notebook.title}</div>
         </Link>
         <div className='notebook-author'>{this.props.user.email}</div>
-        <div className='notebook-updated'>{this.props.notebook.updated_at}</div>
+        <div className='notebook-updated'>
+          {cleanDate(this.props.notebook.updated_at)}
+        </div>
         <div className='notebook-actions'>
           <button
             onClick={(e) => this.handleDelete(e)}
