@@ -126,7 +126,7 @@
   .note-title-container {
     height: 86.5px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     input {
       border: none;
@@ -134,6 +134,10 @@
       font-family: 'Nunito';
       font-size: 1.5rem;
       width: 80%;
+      color: rgb(61, 61, 61);
+    }
+    input:focus {
+      outline: none;
     }
     button {
       color: white;
@@ -145,6 +149,16 @@
       cursor: pointer;
       opacity: 80%;
     }
+    .move-note-btn {
+      background: rgb(76, 216, 76);
+      margin-right: 0;
+    }
+
+    .move-note-btn:hover {
+      transition: 0.1s ease-in;
+      background: rgb(62, 175, 62);
+    }
+
     button:hover {
       transition: 0.1s ease-in;
       background: rgb(204, 0, 0);

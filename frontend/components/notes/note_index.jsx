@@ -42,7 +42,9 @@ class NoteIndex extends React.Component {
             {/* Notes */}
             {this.props.notebookId ? this.props.notebookId.title : 'Notes'}
           </span>
-          <p>{notesArray()} notes</p>
+          <p>
+            {notesArray()} {notesArray() === 1 ? 'note' : 'notes'}
+          </p>
           <div>{this.props.notebookId ? modalDisplay : null}</div>
         </div>
         <ul className='note-index-container'>

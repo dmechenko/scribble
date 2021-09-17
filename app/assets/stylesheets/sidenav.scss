@@ -16,7 +16,7 @@
     align-items: center;
     margin-bottom: 30%;
     .pencil-logo {
-      padding-right: 3px;
+      margin-right: 3px;
       border-radius: 100%;
     }
   }
@@ -55,6 +55,21 @@
       transform: scale(1.5);
       margin-right: 10%;
     }
+  }
+
+  .home-btn:hover,
+  .notebooks-btn:hover,
+  .logout-btn:hover {
+    .home-icon {
+      color: coral;
+    }
+    .book-icon {
+      color: rgb(255, 255, 97);
+    }
+    .logout-icon {
+      color: lime;
+    }
+    border-bottom: 4px solid #24ace6;
   }
   .notebooks-btn {
     background: none;
