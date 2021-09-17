@@ -23,19 +23,19 @@ class EditNotebook extends React.Component {
     // debugger;
     return (
       <div className='modal-container'>
-        <div className='modal-main'>
-          <div className='modal-title'>
+        <div className='modal-main-edit'>
+          <div className='modal-title-edit'>
             <p className='modal-type'>Rename Notebook</p>
             <div
               onClick={() => this.props.closeModal()}
               className='close-modal'
             >
-              close
+              ✖
             </div>
           </div>
           <div className='modal-form-container'>
             <form onSubmit={(e) => this.handleSubmit(e)} className='modal-form'>
-              <label>
+              <label className='modal-edit-title'>
                 Title
                 <input
                   type='text'
@@ -44,7 +44,7 @@ class EditNotebook extends React.Component {
                   placeholder='Enter a title for your new notebook'
                 />
               </label>
-              <button>Continue</button>
+              <button className='edit-continue-btn'>Continue</button>
             </form>
           </div>
         </div>

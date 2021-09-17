@@ -21,10 +21,10 @@ class NoteIndex extends React.Component {
     };
 
     const modalDisplay = (
-      <div>
+      <div className='notebook-edit-btn-container'>
         <button
-          onClick={() => this.props.openModal('edit-notebook')}
           className='notebook-edit-btn'
+          onClick={() => this.props.openModal('edit-notebook')}
         >
           Rename Notebook
         </button>
