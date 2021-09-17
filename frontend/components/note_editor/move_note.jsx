@@ -108,7 +108,6 @@ class MoveNote extends React.Component {
 }
 
 const mSTP = (state, ownProps) => {
-  // debugger;
   return {
     note: state.entities.notes[
       ownProps.history.location.pathname.split('/').slice(-1)

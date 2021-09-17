@@ -10,12 +10,10 @@ import {
 import NoteEditor from './note_editor';
 
 const mSTP = (state, ownProps) => {
-  // debugger;
   return {
     note: state.entities.notes[ownProps.match.params.noteId],
     noteId: state.entities.notes[ownProps.match.params.noteId],
     notes: state.entities.notes,
-    // updatedAt: state.entities.notes[ownProps.match.params.noteId].updated_at,
   };
 };
 

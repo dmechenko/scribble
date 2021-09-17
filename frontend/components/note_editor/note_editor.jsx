@@ -52,7 +52,6 @@ class NoteEditor extends React.Component {
   }
 
   render() {
-    // debugger;
     const formats = [
       'header',
       'font',

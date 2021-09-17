@@ -6,7 +6,6 @@ import NoteIndex from './note_index';
 import { withRouter } from 'react-router-dom';
 
 const mSTP = (state, ownProps) => {
-  // debugger;
   return {
     notes: Object.values(state.entities.notes),
     notebookId: state.entities.notebooks[ownProps.match.params.notebookId],

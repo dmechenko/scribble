@@ -24,7 +24,7 @@ class NotebookLis extends React.Component {
         openModal={this.props.openModal}
       />
     ));
-    // debugger;
+
     return (
       <div className='notebook-item-main'>
         <button

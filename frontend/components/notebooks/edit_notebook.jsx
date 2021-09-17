@@ -20,7 +20,6 @@ class EditNotebook extends React.Component {
   }
 
   render() {
-    // debugger;
     return (
       <div className='modal-container'>
         <div className='modal-main-edit'>

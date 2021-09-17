@@ -23,7 +23,6 @@ class Api::NotebooksController < ApplicationController
   end
 
   def update
-    # debugger
     @notebook = Notebook.find_by(id: params[:id])
 
     if @notebook.update(notebook_params)

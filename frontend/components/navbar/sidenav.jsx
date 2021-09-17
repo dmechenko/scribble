@@ -19,7 +19,7 @@ class Sidenav extends React.Component {
       body: '',
       notebook_id: this.props.history.location.pathname.split('/')[2],
     };
-    // debugger;
+
     let notebookPathId = note.notebook_id;
     note.notebook_id
       ? this.props.createNote(note).then((object) => {
@@ -28,10 +28,7 @@ class Sidenav extends React.Component {
             `notebooks/${notebookPathId}/notes/${object.note.id}`
           );
         })
-      : // this.props.createNote(note).then((object) => {
-        //   this.props.history.push(`/notes/${object.note.id}`);
-        // })
-        this.props.createNote(note).then((object) => {
+      : this.props.createNote(note).then((object) => {
           this.props.history.push(`/notes/${object.note.id}`);
         });
   }

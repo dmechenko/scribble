@@ -41,10 +41,6 @@ class NotebookIndexItem extends React.Component {
   // }
 
   render() {
-    // debugger;
-    // const options = ['one', 'two', 'three'];
-    // const defaultOption = options[0];
-
     return (
       <div className='notebook-index-item-container'>
         <Modal />
@@ -85,19 +81,3 @@ class NotebookIndexItem extends React.Component {
 }
 
 export default withRouter(NotebookIndexItem);
-
-// const NotebookIndexItem = (props) => {
-//   if (!props.notebook) return null;
-//   debugger;
-//   return (
-//     <div className='notebook-index-item-container'>
-//       <div className='notebook-index-item'></div>
-//       <Link to={`/notebooks/${props.notebook.id}/notes`}>
-//         <div className='notebook-title'>{props.notebook.title}</div>
-//       </Link>
-//       <div className='notebook-author'>{props.notebook.author_id}</div>
-//       <div className='notebook-updated'>{props.notebook.updated_at}</div>
-//       <div className='notebook-actions'>...</div>
-//     </div>
-//   );
-// };
