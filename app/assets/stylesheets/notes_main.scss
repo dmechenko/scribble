@@ -173,15 +173,16 @@
 
 .side-pieces {
   // display: flex;
+  justify-items: center;
   justify-content: center;
   align-items: center;
   // width: 100%;
   flex-direction: column;
   display: grid;
-  grid-template-columns: repeat(2, 0.5fr);
+  grid-template-columns: repeat(2, 0.35fr);
   /* grid-auto-rows: 350px; */
   margin: 0 30px;
-  grid-column-gap: 50px;
+  column-gap: 50px;
   align-content: center;
   margin-left: 10%;
   margin-right: 10%;

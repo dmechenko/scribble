@@ -1,3 +1,5 @@
+import { faBook } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -38,32 +40,66 @@ class MoveNote extends React.Component {
     return (
       <div className='modal-container'>
         <div className='modal-main'>
-          <div className='modal-title'>
-            <p className='modal-type'>Choose a notebook to move to:</p>
+          <div className='modal-title-move'>
+            <p className='modal-type'>Move note to...</p>
             <div
               onClick={() => this.props.closeModal()}
               className='close-modal'
             >
-              close
+              ✖
             </div>
           </div>
           <div className='modal-notebook-list'>
             <ul>
-              {this.props.notebooks.map((notebook) => (
-                <li
-                  value={notebook.id}
-                  onClick={() => this.changeNotebook(notebook)}
-                  className='modal-notebook-list-item'
-                  key={notebook.id}
-                >
-                  {notebook.title}
-                </li>
-              ))}
+              {this.props.notebooks.map((notebook) => {
+                if (this.props.note.notebook_id === notebook.id) {
+                  return (
+                    <li
+                      value={notebook.id}
+                      onClick={() => this.changeNotebook(notebook)}
+                      className='modal-notebook-list-item'
+                      key={notebook.id}
+                    >
+                      <FontAwesomeIcon
+                        className='modal-book-icon'
+                        icon={faBook}
+                      />
+                      {notebook.title} (current)
+                    </li>
+                  );
+                } else {
+                  return (
+                    <li
+                      value={notebook.id}
+                      onClick={() => this.changeNotebook(notebook)}
+                      className='modal-notebook-list-item'
+                      key={notebook.id}
+                    >
+                      {' '}
+                      <FontAwesomeIcon
+                        className='modal-book-icon'
+                        icon={faBook}
+                      />
+                      {notebook.title}
+                    </li>
+                  );
+                }
+              })}
             </ul>
           </div>
           <div className='modal-move-btn'>
-            <button onClick={() => this.handleMove()}>Continue</button>
-            <button onClick={() => this.props.closeModal()}>Cancel</button>
+            <button
+              className='modal-continue'
+              onClick={() => this.handleMove()}
+            >
+              Continue
+            </button>
+            <button
+              className='modal-cancel'
+              onClick={() => this.props.closeModal()}
+            >
+              Cancel
+            </button>
           </div>
         </div>
       </div>
@@ -72,7 +108,7 @@ class MoveNote extends React.Component {
 }
 
 const mSTP = (state, ownProps) => {
-  debugger;
+  // debugger;
   return {
     note: state.entities.notes[
       ownProps.history.location.pathname.split('/').slice(-1)

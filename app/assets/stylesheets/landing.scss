@@ -26,7 +26,8 @@
     }
   }
   .sign-up p,
-  .session-signin-btn {
+  .session-signin-btn,
+  .session-signin-btn-2 {
     display: flex;
     text-align: center;
     margin-bottom: 4px;
@@ -40,12 +41,30 @@
     border: 1px solid #24ace6;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 5px;
+    margin-top: 20px;
     transition-property: background-color;
     text-decoration: none;
     padding: 0;
-    height: 40px;
-    width: 80px;
+    height: 75px;
+    width: 155px;
+    .sign-in-text {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  .session-signin-btn-2 {
+    color: white;
+    background: #24ace6;
+    border: 1px solid #24ace6;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition-property: background-color;
+    text-decoration: none;
+    padding: 0;
+    height: 55px;
+    width: 110px;
     .sign-in-text {
       color: white;
       text-decoration: none;
@@ -56,16 +75,21 @@
     display: flex;
     margin-top: 50px;
     margin-bottom: 10vh;
+    justify-content: center;
     .reasons {
       margin-top: 40px;
       font-family: 'Nunito', sans-serif;
     }
     .reason-text {
-      margin-bottom: 15px;
+      margin-bottom: 25px;
       h3 {
         font-size: 1.25rem;
         font-weight: bold;
         margin-bottom: 5px;
+      }
+      p {
+        width: 500px;
+        line-height: 1.5;
       }
     }
   }
@@ -73,6 +97,7 @@
   .content img {
     width: 750px;
     height: auto;
+    margin-right: 100px;
   }
   .landing-sections {
     display: flex;
@@ -100,6 +125,10 @@
         font-size: 2rem;
         color: white;
         flex-direction: column;
+        h2 {
+          margin-bottom: 10px;
+          font-size: 45px;
+        }
         ul {
           font-size: smaller;
           padding-top: 2%;

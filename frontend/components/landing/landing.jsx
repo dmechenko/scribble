@@ -8,7 +8,7 @@ const Landing = () => {
         <h1>Don't lose track of your ideas.</h1>
         <h5>Scribble can store your notes forever.</h5>
       </div>
-      <button className='session-signin-btn'>
+      <button className='session-signin-btn-2'>
         <Link className='sign-in-text' to='/signup'>
           Sign Up
         </Link>
@@ -19,25 +19,22 @@ const Landing = () => {
           <div className='reason-text'>
             <h3>REMEMBER EVERYTHING</h3>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-              consequatur asperiores! Modi saepe, tempora nulla, harum rerum
-              corrupti nam veritatis.
+              Keep all your important thoughts in check. From your aspirations
+              to your zoo trip plans.
             </p>
           </div>
           <div className='reason-text'>
-            <h3>Placeholder</h3>
+            <h3>FIND YOUR NOTES QUICKLY</h3>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-              consequatur asperiores! Modi saepe, tempora nulla, harum rerum
-              corrupti nam veritatis.
+              Organizing your notes are quick and easy. Store them by notebook,
+              or by adding tags.
             </p>
           </div>
           <div className='reason-text'>
-            <h3>Placeholder</h3>
+            <h3>ADD SOME FLAVOR</h3>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-              consequatur asperiores! Modi saepe, tempora nulla, harum rerum
-              corrupti nam veritatis.
+              With our rich and flexible text editor, add a splash of color or
+              store your memories in notes by adding images or embedding videos.
             </p>
           </div>
         </div>

@@ -24,25 +24,28 @@ class AddNotebook extends React.Component {
   render() {
     return (
       <div className='modal-container'>
-        <div className='modal-main'>
-          <div className='modal-title'>
-            <p className='modal-type'>Add a Notebook</p>
+        <div className='modal-main-add'>
+          <div className='modal-title-add'>
+            <p className='modal-type'>Create new notebook</p>
             <div
               onClick={() => this.props.closeModal()}
               className='close-modal'
             >
-              close
+              ✖
             </div>
           </div>
           <div className='modal-form-container'>
             <form onSubmit={(e) => this.handleSubmit(e)} className='modal-form'>
               <label>
-                Title
+                <p className='nb-comment'>
+                  Notebooks are useful for grouping notes around a common topic.{' '}
+                </p>
+                <p className='nb-title'>Title</p>
                 <input
                   type='text'
                   value={this.state.title}
                   onChange={this.handleChange('title')}
-                  placeholder='Enter a title for your new notebook'
+                  placeholder='New notebook'
                 />
               </label>
               <button>Add New Notebook</button>
