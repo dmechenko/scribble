@@ -133,7 +133,7 @@
 
 .nb-comment {
   font-size: 16px;
-  margin-bottom: 10px;
+  margin-bottom: 29px;
 }
 
 .nb-title {
@@ -150,4 +150,25 @@
   display: flex;
   height: 30px;
   margin-top: 5px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  padding-left: 5px;
+}
+
+.add-nb-btn {
+  position: absolute;
+  bottom: 27px;
+  right: 27px;
+  height: 42px;
+  border: 1px solid #4b664b;
+  border-radius: 5px;
+  background: #b3faae;
+  color: #898989;
+  width: 75px;
+  cursor: pointer;
+}
+
+.add-nb-btn:hover {
+  transition: 0.1s ease-in;
+  background: #8ceb85;
 }

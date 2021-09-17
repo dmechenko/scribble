@@ -48,8 +48,14 @@ class AddNotebook extends React.Component {
                   placeholder='New notebook'
                 />
               </label>
-              <button>Add New Notebook</button>
+              <button className='add-nb-btn'>Create</button>
             </form>
+            {/* <button
+              className='modal-cancel'
+              onClick={() => this.props.closeModal()}
+            >
+              Cancel
+            </button> */}
           </div>
         </div>
       </div>
