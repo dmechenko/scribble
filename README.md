@@ -16,12 +16,13 @@
 
 - Create an account, or use an existing one to sign in.
 - A demo user is also available for those that just want to browse the site's functionality.
-  ![Desktop 2021 09 17 - 10 48 37 26_Trim](https://user-images.githubusercontent.com/85643458/133842517-05280ffe-0715-411d-a468-d1208af64b49.gif)
+
+![Desktop 2021 09 17 - 10 48 37 26_Trim](https://user-images.githubusercontent.com/85643458/133842517-05280ffe-0715-411d-a468-d1208af64b49.gif)
 
 ### Creation and Manipulation of Notes
 
 - Jump right in and add a note. Add a splash of color or some embedded content.
-- Move it around and change the title.
+- Move it around to a different notebook, or change the title.
   GIF PLACEHOLDER
 
 ### Organization by Notebooks
