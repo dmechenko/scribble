@@ -23,7 +23,33 @@
 
 - Jump right in and add a note. Add a splash of color or some embedded content.
 - Move it around to a different notebook, or change the title.
-  GIF PLACEHOLDER
+
+### Deciding how to divert the path was a bit tricky, so I made the link render conditionally depending on whether or not the specific note was already attached to a notebook.
+
+```jsx
+const NoteIndexItem = (props) => {
+  if (!props.note) return null;
+
+  let notebookPath = props.match.params.notebookId;
+  let path;
+  if (notebookPath) {
+    path = `/notebooks/${notebookPath}/notes/${props.note.id}`;
+  } else {
+    path = `/notes/${props.note.id}`;
+  }
+  return (
+    <Link to={`${path}`}>
+      <div className='note-index-item-container'>
+        <div className='note-index-item'>
+          <div className='title'>{props.note.title}</div>
+          <div className='body'>{parse(props.note.body)}</div>
+          <div className='note-updated'>{cleanDate(props.note.updated_at)}</div>
+        </div>
+      </div>
+    </Link>
+  );
+};
+```
 
 ### Organization by Notebooks
 
