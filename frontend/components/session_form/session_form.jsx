@@ -7,6 +7,10 @@ class SessionForm extends React.Component {
     this.state = {
       email: '',
       password: '',
+      errors: {
+        email: '',
+        password: '',
+      },
     };
   }
 
@@ -30,12 +34,26 @@ class SessionForm extends React.Component {
     return (e) => this.setState({ [field]: e.target.value });
   }
 
-  renderErrors() {
+  // renderErrors() {
+  //   return (
+  //     <ul>
+  //       {this.props.errors.map((error, i) => (
+  //         <li key={i}>{error}</li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
+  renderEmailErrors() {
     return (
       <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={i}>{error}</li>
-        ))}
+        <li key={this.props.errors[0]}>{this.props.errors[0]}</li>
+      </ul>
+    );
+  }
+  renderPasswordErrors() {
+    return (
+      <ul>
+        <li key={this.props.errors[1]}>{this.props.errors[1]}</li>
       </ul>
     );
   }
@@ -44,7 +62,7 @@ class SessionForm extends React.Component {
     if (this.props.currentUser) {
       <Redirect to={'/'} />;
     }
-
+    console.log(this.props.errors);
     return (
       <div className='background-login'>
         <form className='session-form' onSubmit={(e) => this.handleSubmit(e)}>
@@ -79,7 +97,7 @@ class SessionForm extends React.Component {
                 onChange={this.handleChange('email')}
                 placeholder='Email address'
               />
-
+              <div className='errors'>{this.renderEmailErrors()}</div>
               <input
                 className='session-input'
                 type='password'
@@ -87,7 +105,7 @@ class SessionForm extends React.Component {
                 onChange={this.handleChange('password')}
                 placeholder='Password'
               />
-              <div className='errors'>{this.renderErrors()}</div>
+              <div className='errors'>{this.renderPasswordErrors()}</div>
               <button className='session-signin-btn'>Sign in</button>
 
               <button
@@ -114,6 +132,7 @@ class SessionForm extends React.Component {
                 onChange={this.handleChange('email')}
                 placeholder='Email'
               />
+              <div className='errors'>{this.renderEmailErrors()}</div>
               <input
                 className='session-input'
                 type='password'
@@ -121,7 +140,7 @@ class SessionForm extends React.Component {
                 onChange={this.handleChange('password')}
                 placeholder='Password'
               />
-              <div className='errors'>{this.renderErrors()}</div>
+              <div className='errors'>{this.renderPasswordErrors()}</div>
               <button className='session-signin-btn'>Continue</button>
               <Link className='link2' to='/login'>
                 Already have an account?

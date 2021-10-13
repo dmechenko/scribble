@@ -14,7 +14,8 @@ class NoteSide extends React.Component {
   }
 
   handleRedirect() {
-    window.location = 'https://dmechenko.github.io/aA-SnowBrawl/';
+    // window.location = 'https://dmechenko.github.io/aA-SnowBrawl/';
+    window.open('https://dmechenko.github.io/aA-SnowBrawl/', '_blank');
   }
 
   // handleDrag() {

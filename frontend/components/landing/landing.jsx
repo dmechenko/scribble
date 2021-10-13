@@ -83,28 +83,58 @@ const Landing = () => {
         </div>
       </div>
       <div className='footer'>
-        <div className='footer-row'>
-          <h4>ABOUT ME</h4>
+        <div className='footer-row first-footer-row'>
+          <h4>FEATURES</h4>
           <ul>
-            <li>Hey, I'm Daniel Mechenko</li>
-            <li>NYC Native</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
+            <li>Throw in some flavor using our rich text editor</li>
+            <li>Embed images and videos to bring life to your notes</li>
+            <li>Auto-save functionality; don't worry losing your thoughts</li>
+            <li>Add notebooks to organize notes and separate concerns</li>
+            <li>Add tags to quickly filter notes by what's important</li>
+            {/* <li>Tags</li> */}
           </ul>
         </div>
         <div className='footer-row'>
           <h4>CONTACT</h4>
           <ul>
             <li>
-              <a href='https://github.com/dmechenko'>Github</a>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://github.com/dmechenko'
+              >
+                Github
+              </a>
             </li>
             <li>
-              <a href='https://www.linkedin.com/in/dmechenko/'>LinkedIn</a>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://www.linkedin.com/in/dmechenko/'
+              >
+                LinkedIn
+              </a>
             </li>
             <li>
-              <a href='#'>Personal Site</a>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://dmechenko.github.io/portfoliov1.1/'
+              >
+                Personal Site
+              </a>
+            </li>
+            <li>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://angel.co/u/daniel-m-32'
+              >
+                AngelList
+              </a>
             </li>
             <li>dmechenko@gmail.com</li>
+            <li>(347) 840-1820</li>
           </ul>
         </div>
         <div className='footer-row'>
@@ -118,19 +148,37 @@ const Landing = () => {
             <li>Node.js</li>
             <li>React</li>
             <li>Redux</li>
+            <li>Node.js</li>
+            <li>Express.js</li>
           </ul>
         </div>
         <div className='footer-row'>
           <h4>OTHER PROJECTS</h4>
           <ul>
             <li>
-              <a href='https://dmechenko.github.io/aA-SnowBrawl/'>SnowBrawl</a>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://dmechenko.github.io/aA-SnowBrawl/'
+              >
+                SnowBrawl
+              </a>
             </li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
+            <li>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://picky-eatr.herokuapp.com/#/'
+              >
+                pickyEatr
+              </a>
+            </li>
           </ul>
         </div>
       </div>
+      <p className='copyright'>
+        Copyright &copy; 2021 Daniel Mechenko | Inspired by Evernote
+      </p>
     </div>
   );
 };

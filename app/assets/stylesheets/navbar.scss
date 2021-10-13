@@ -26,6 +26,7 @@
   padding-bottom: 20px;
   font-family: 'Urbanist', sans-serif;
   min-width: 800px;
+  gap: 30px;
   // background: radial-gradient(
   //   ellipse at center,
   //   rgba(255, 254, 234, 1) 0%,
@@ -53,7 +54,7 @@
   text-align: justify;
   text-decoration: none;
   color: black;
-  margin-left: 20px;
+  // margin-left: 20px;
   flex-direction: row;
   transition-property: color;
   :hover {
@@ -89,7 +90,7 @@
   font-weight: bold;
   :hover {
     transition: 0s;
-    padding-bottom: 10%;
+    padding-bottom: 20%;
     border-bottom: 5px solid #24ace6;
   }
 }
