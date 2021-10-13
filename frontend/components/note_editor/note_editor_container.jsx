@@ -10,6 +10,7 @@ import {
 import NoteEditor from './note_editor';
 
 const mSTP = (state, ownProps) => {
+  console.log(state);
   return {
     note: state.entities.notes[ownProps.match.params.noteId],
     noteId: state.entities.notes[ownProps.match.params.noteId],
