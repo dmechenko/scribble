@@ -6,6 +6,8 @@ import {
   faBook,
   faSignOutAlt,
   faPlusSquare,
+  faTags,
+  faGlobe,
 } from '@fortawesome/free-solid-svg-icons';
 
 class Sidenav extends React.Component {
@@ -44,20 +46,43 @@ class Sidenav extends React.Component {
           <FontAwesomeIcon className='plus-icon' icon={faPlusSquare} />
           New
         </button>
-        <button className='home-btn'>
-          <FontAwesomeIcon className='home-icon' icon={faHome} />
-          <Link to='/notes'>Home</Link>
-        </button>
-        <button className='notebooks-btn'>
-          <FontAwesomeIcon className='book-icon' icon={faBook} />
-          <Link to='/notebooks'>Notebooks</Link>
-        </button>
-        <button className='logout-btn'>
-          <FontAwesomeIcon className='logout-icon' icon={faSignOutAlt} />
-          <Link to='/' onClick={this.props.logout}>
-            Logout
-          </Link>
-        </button>
+        <div>
+          <button className='home-btn'>
+            <FontAwesomeIcon className='home-icon' icon={faHome} />
+            <Link to='/notes'>Home</Link>
+          </button>
+          <button className='notebooks-btn'>
+            <FontAwesomeIcon className='book-icon' icon={faBook} />
+            <Link to='/notebooks'>Notebooks</Link>
+          </button>
+          <button className='tags-btn'>
+            <FontAwesomeIcon className='tag-icon' icon={faTags} />
+            <Link to='/tags'>Tags</Link>
+          </button>
+          <button className='logout-btn'>
+            <FontAwesomeIcon className='logout-icon' icon={faSignOutAlt} />
+            <Link to='/' onClick={this.props.logout}>
+              Logout
+            </Link>
+          </button>
+        </div>
+        <div className='online-links'>
+          <ul>
+            <li>
+              <a href='#'> Github </a>
+            </li>
+            <li>
+              <a href='#'> LinkedIn </a>
+            </li>
+            <li>
+              <a href='#'> AngelList </a>
+            </li>
+            <li>
+              <FontAwesomeIcon className='plus-icon' icon={faGlobe} />
+              <a href='#'> Personal Site </a>
+            </li>
+          </ul>
+        </div>
       </div>
     );
   }
