@@ -1,6 +1,9 @@
 .tag-main {
   max-width: 30%;
   background: #f8f8f8;
+  li {
+    padding: 15px;
+  }
 }
 
 .tag-header {
@@ -45,4 +48,10 @@
   border: none;
   cursor: pointer;
   font-weight: 600;
+}
+
+.tag-index-item-container {
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.678);
+  font-size: 0.9rem;
 }

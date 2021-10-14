@@ -9,6 +9,7 @@
 #  notebook_id :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  tag_id      :integer
 #
 class Note < ApplicationRecord
   validates :title, :author_id, presence: true

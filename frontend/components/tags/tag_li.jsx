@@ -30,8 +30,7 @@ class TagLis extends React.Component {
           onClick={() => this.props.openModal('create-tag')}
           className='tag-add-btn'
         >
-          <FontAwesomeIcon className='plus-icon' icon={faPlusSquare} />
-          Add Tag
+          <FontAwesomeIcon className='plus-icon' icon={faPlusSquare} /> Add Tag
         </button>
         <li>{tagItem}</li>
       </div>

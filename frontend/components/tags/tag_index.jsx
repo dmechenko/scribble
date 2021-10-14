@@ -39,7 +39,16 @@ class TagIndex extends React.Component {
           <p>Tags</p>
         </div>
         <ul className='tag-index-container'>
-          <TagLis tags={this.props.tags} openModal={this.props.openModal} />
+          <TagLis
+            tags={this.props.tags}
+            openModal={this.props.openModal}
+            user={this.props.user}
+            openModal={this.props.openModal}
+            fetchTag={this.props.fetchTag}
+            createTag={this.props.createTag}
+            deleteTag={this.props.deleteTag}
+            updateTag={this.props.updateTag}
+          />
         </ul>
       </div>
     );

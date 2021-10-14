@@ -1,6 +1,6 @@
 class Api::TagsController < ApplicationController
   before_action :ensure_logged_in
-  
+
   def create
     @tag = Tag.new(tag_params)
     @tag.user_id = @current_user.id
