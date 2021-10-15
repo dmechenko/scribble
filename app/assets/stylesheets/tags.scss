@@ -55,3 +55,15 @@
   color: rgba(0, 0, 0, 0.678);
   font-size: 0.9rem;
 }
+
+.filter-icon {
+  position: absolute;
+  color: grey;
+  left: 525px;
+  top: 62px;
+  cursor: pointer;
+}
+
+.filter-icon:hover {
+  color: rgb(170, 35, 35);
+}

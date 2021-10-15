@@ -2,13 +2,22 @@ import React from 'react';
 import NoteLis from './note_li';
 import Modal from '../modal/modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStickyNote } from '@fortawesome/free-solid-svg-icons';
+import { faStickyNote, faFilter } from '@fortawesome/free-solid-svg-icons';
 
 class NoteIndex extends React.Component {
   componentDidMount() {
     this.props.fetchNotes();
     this.props.fetchNotebooks();
+    this.props.fetchTags();
   }
+
+  handleDropDown() {
+    const mapTags = this.props.tags.map((tag, i) => {
+      <li key={i}>{tag}</li>;
+    });
+    return mapTags;
+  }
+
   render() {
     const notesArray = () => {
       if (this.props.notebookId) {
@@ -46,6 +55,9 @@ class NoteIndex extends React.Component {
             {notesArray()} {notesArray() === 1 ? 'note' : 'notes'}
           </p>
           <div>{this.props.notebookId ? modalDisplay : null}</div>
+        </div>
+        <div onClick={() => this.handleDropDown()}>
+          <FontAwesomeIcon className='filter-icon' icon={faFilter} />
         </div>
         <ul className='note-index-container'>
           <NoteLis

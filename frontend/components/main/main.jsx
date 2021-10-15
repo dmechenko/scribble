@@ -6,6 +6,7 @@ import NoteIndexContainer from '../notes/note_index_container';
 import NoteSide from '../notes/note_side';
 import NoteEditorContainer from '../note_editor/note_editor_container';
 import TagIndexContainer from '../tags/tag_index_container';
+import TagShow from '../tags/tag_show';
 
 class Main extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class Main extends React.Component {
         <Route path='/notes/' component={NoteIndexContainer}></Route>
         <Route exact path='/notes/' component={NoteSide}></Route>
         <Route path='/tags' component={TagIndexContainer}></Route>
+        <Route path='/tags/:id' component={TagShow}></Route>
         <Route exact path='/tags/' component={NoteSide}></Route>
         <Route path='/notes/:noteId' component={NoteEditorContainer}></Route>
         <Route

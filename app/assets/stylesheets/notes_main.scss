@@ -124,7 +124,7 @@
   overflow: none;
   background: white;
   .note-title-container {
-    height: 86.5px;
+    height: 88.5px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -165,9 +165,10 @@
     }
   }
   .quill-container {
-    .ql-container {
-      height: 30vh;
-    }
+    height: 100%;
+  }
+  .quill {
+    height: 100%;
   }
 }
 

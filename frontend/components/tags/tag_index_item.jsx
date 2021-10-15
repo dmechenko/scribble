@@ -5,7 +5,6 @@ const TagIndexItem = (props) => {
   if (!props.tag) return null;
 
   function handleDelete(e) {
-    debugger;
     e.stopPropagation();
     e.preventDefault();
     props.deleteTag(props.tag.id);
@@ -14,7 +13,9 @@ const TagIndexItem = (props) => {
   return (
     <div className='tag-index-item-container'>
       <div className='tag-index-item'>
-        <div className='title'>{props.tag.title}</div>
+        <Link to={`/tags/${props.tag.id}`}>
+          <div className='title'>{props.tag.title}</div>
+        </Link>
         <button
           onClick={(e) => handleDelete(e)}
           className='notebook-action-btn'
