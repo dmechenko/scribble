@@ -9,6 +9,9 @@ import {
   faTags,
   faGlobe,
 } from '@fortawesome/free-solid-svg-icons';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+import { FaAngellist } from 'react-icons/fa';
+import { BsPersonCircle } from 'react-icons/bs';
 
 class Sidenav extends React.Component {
   constructor(props) {
@@ -67,19 +70,51 @@ class Sidenav extends React.Component {
           </button>
         </div>
         <div className='online-links'>
-          <ul>
+          <ul className='sidenav-links'>
             <li>
-              <a href='#'> Github </a>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://github.com/dmechenko'
+              >
+                {' '}
+                <AiFillGithub />
+                Github{' '}
+              </a>
             </li>
             <li>
-              <a href='#'> LinkedIn </a>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://www.linkedin.com/in/dmechenko/'
+              >
+                {' '}
+                <AiFillLinkedin />
+                LinkedIn{' '}
+              </a>
             </li>
             <li>
-              <a href='#'> AngelList </a>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://angel.co/u/daniel-m-32'
+              >
+                {' '}
+                <FaAngellist />
+                AngelList{' '}
+              </a>
             </li>
-            <li>
-              <FontAwesomeIcon className='plus-icon' icon={faGlobe} />
-              <a href='#'> Personal Site </a>
+            <li className='last-li-sidenav'>
+              {/* <FontAwesomeIcon className='plus-icon' icon={faGlobe} /> */}
+              <BsPersonCircle />
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://dmechenko.github.io/portfoliov1.1/'
+              >
+                {' '}
+                Personal Site{' '}
+              </a>
             </li>
           </ul>
         </div>

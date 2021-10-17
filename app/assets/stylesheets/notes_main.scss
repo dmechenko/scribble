@@ -275,3 +275,11 @@
   margin-top: 35px;
   height: 100px;
 }
+
+.note-tag-show {
+  position: absolute;
+  color: red;
+  z-index: 100;
+  bottom: 0;
+  display: flex;
+}

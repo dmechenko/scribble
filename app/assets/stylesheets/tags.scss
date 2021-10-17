@@ -67,3 +67,26 @@
 .filter-icon:hover {
   color: rgb(170, 35, 35);
 }
+
+.tagged-notes-container {
+  width: 100%;
+  height: 100%;
+}
+
+.tagged-note-item-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 50px;
+}
+
+.tagged-note {
+  width: fit-content;
+  background: grey;
+  height: 50px;
+  padding: 10px;
+  /* align-content: center; */
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+}

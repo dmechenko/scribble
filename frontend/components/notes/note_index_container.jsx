@@ -4,7 +4,7 @@ import { fetchNotes } from '../../actions/note_actions';
 import { fetchNotebooks } from '../../actions/notebook_actions';
 import NoteIndex from './note_index';
 import { withRouter } from 'react-router-dom';
-import { fetchTags } from '../../actions/tag_actions';
+import { fetchTags, updateTag } from '../../actions/tag_actions';
 
 const mSTP = (state, ownProps) => {
   return {
@@ -20,6 +20,7 @@ const mDTP = (dispatch) => ({
   // fetchNotebook: (notebookId) => dispatch(fetchNotebook(notebookId)),
   openModal: (modal) => dispatch(openModal(modal)),
   fetchTags: () => dispatch(fetchTags()),
+  updateTag: (tag) => dispatch(updateTag(tag)),
 });
 
 export default withRouter(connect(mSTP, mDTP)(NoteIndex));

@@ -23,6 +23,7 @@ class NoteEditor extends React.Component {
         updated_at: this.state.updated_at,
       });
     });
+    this.props.fetchTags();
   }
 
   componentDidUpdate(prevProps) {
@@ -49,6 +50,12 @@ class NoteEditor extends React.Component {
       : this.props
           .deleteNote(this.state.id)
           .then(this.props.history.push(`/notes/`)); // otherwise, just go back to notes main
+  }
+
+  handleAddTag(tag) {
+    if (!tag) return null;
+    tag.note_id_array.push(this.props.note.id);
+    this.props.updateTag(tag);
   }
 
   render() {
@@ -80,6 +87,11 @@ class NoteEditor extends React.Component {
         ['clean'],
       ],
     };
+    // const noteTags = this.props.tags.filter((tag) => {
+    //   return tag.note_id_array.includes(this.props.note.id);
+    // });
+
+    // debugger;
     return (
       <div className='note-container'>
         <div className='note-title-container'>
@@ -111,6 +123,30 @@ class NoteEditor extends React.Component {
               500 //update every x milliseconds
             )}
           />
+        </div>
+        {/* <div>
+          {this.props.tags.map((tag) => {
+            return (
+              <li className='note-tag-show' key={tag.id}>
+                {tag.title}
+              </li>
+            );
+          })}
+        </div> */}
+        <div className='note-tag-show'>
+          <button
+            className='tag-create'
+            onClick={() => this.props.openModal('create-tag')}
+          >
+            New Tag
+          </button>
+          {this.props.tags.map((tag) => {
+            return (
+              <div onClick={() => this.handleAddTag(tag)}>
+                <li>{tag.title}</li>
+              </div>
+            );
+          })}
         </div>
       </div>
     );
