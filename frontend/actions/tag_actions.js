@@ -29,7 +29,11 @@ export const createTag = (tag) => (dispatch) =>
   TagAPIUtil.createTag(tag).then((tag) => dispatch(receiveSingularTag(tag)));
 
 export const updateTag = (tag) => (dispatch) =>
-  TagAPIUtil.updateTag(tag).then((tag) => dispatch(receiveSingularTag(tag)));
+  TagAPIUtil.updateTag(tag).then((tag) => {
+    debugger;
+    dispatch(receiveSingularTag(tag));
+    console.log(tag);
+  });
 
-export const deleteTag = () => (dispatch) =>
-  TagAPIUtil.deleteTag().then((tagId) => dispatch(removeTag(tagId)));
+export const deleteTag = (tagId) => (dispatch) =>
+  TagAPIUtil.deleteTag(tagId).then(() => dispatch(removeTag(tagId)));

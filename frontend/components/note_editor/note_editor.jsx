@@ -53,9 +53,10 @@ class NoteEditor extends React.Component {
   }
 
   handleAddTag(tag) {
-    if (!tag) return null;
+    debugger;
     tag.note_id_array.push(this.props.note.id);
-    this.props.updateTag(tag);
+    console.log(this.props);
+    this.props.updateTag(tag.note_id_array);
   }
 
   render() {
@@ -140,12 +141,16 @@ class NoteEditor extends React.Component {
           >
             New Tag
           </button>
-          {this.props.tags.map((tag) => {
-            return (
-              <div onClick={() => this.handleAddTag(tag)}>
-                <li>{tag.title}</li>
-              </div>
-            );
+          {this.props.tags.map((tag, i) => {
+            if (!tag) {
+              return null;
+            } else {
+              return (
+                <div key={i} onClick={() => this.handleAddTag(tag)}>
+                  <li>{tag.title}</li>
+                </div>
+              );
+            }
           })}
         </div>
       </div>

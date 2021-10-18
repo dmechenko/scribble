@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchNotes } from '../../actions/note_actions';
-import { fetchTag } from '../../actions/tag_actions';
+import { fetchTag, fetchTags } from '../../actions/tag_actions';
+fetchTags;
 
 export class TagShow extends Component {
   constructor(props) {
@@ -15,7 +16,8 @@ export class TagShow extends Component {
 
   componentDidMount() {
     this.props.fetchNotes();
-    // this.props.fetchTag(this.props.tag.id);
+    this.props.fetchTags();
+    console.log(this.props.tag);
   }
 
   renderTaggedNotes() {
@@ -27,8 +29,8 @@ export class TagShow extends Component {
         {/* <h1>{this.props.tag[0].title}</h1> */}
         <ul className='tagged-note-item-container'>
           {taggedNotes.map((note, i) => (
-            <Link className='tagged-note' to={`/notes/${note.id}`}>
-              <li key={note.id}>{note.title}</li>
+            <Link key={i} className='tagged-note' to={`/notes/${note.id}`}>
+              <li>{note.title}</li>
             </Link>
           ))}
         </ul>
@@ -72,6 +74,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => ({
   fetchNotes: () => dispatch(fetchNotes()),
   fetchTag: (tagId) => dispatch(fetchTag(tagId)),
+  fetchTags: () => dispatch(fetchTags()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TagShow);

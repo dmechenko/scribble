@@ -7,7 +7,7 @@ import {
   updateNote,
   deleteNote,
 } from '../../actions/note_actions';
-import { createTag, fetchTags } from '../../actions/tag_actions';
+import { createTag, fetchTags, updateTag } from '../../actions/tag_actions';
 import NoteEditor from './note_editor';
 
 const mSTP = (state, ownProps) => {

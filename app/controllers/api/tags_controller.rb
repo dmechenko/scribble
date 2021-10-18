@@ -24,7 +24,7 @@ class Api::TagsController < ApplicationController
   def destroy
     @tag = Tag.find_by(id: params[:id])
 
-    if @tag.destroy
+    if @tag && @tag.destroy
       render '/api/tags/show'
     else
       render json: @tag.errors.full_messages, status: 422
