@@ -3,6 +3,14 @@
   <head>
     <title>Scribble</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta property="og:title" content="scribble" />
+     <meta property='og:image' content="<%= image_url('landingscreen.png') %>"/>
+     <meta property="og:description"
+       content="A full stack Evernote clone with a twist on the theme."
+     />
+     <meta property="og:url"
+       content="https://scr-bble.herokuapp.com/#/"
+     />
     <%= favicon_link_tag asset_path('dolphin_logo.png') %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
