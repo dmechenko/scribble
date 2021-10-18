@@ -30,9 +30,7 @@ export const createTag = (tag) => (dispatch) =>
 
 export const updateTag = (tag) => (dispatch) =>
   TagAPIUtil.updateTag(tag).then((tag) => {
-    debugger;
     dispatch(receiveSingularTag(tag));
-    console.log(tag);
   });
 
 export const deleteTag = (tagId) => (dispatch) =>

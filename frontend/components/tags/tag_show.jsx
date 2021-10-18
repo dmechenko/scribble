@@ -16,8 +16,7 @@ export class TagShow extends Component {
 
   componentDidMount() {
     this.props.fetchNotes();
-    this.props.fetchTags();
-    console.log(this.props.tag);
+    // this.props.fetchTags();
   }
 
   renderTaggedNotes() {
@@ -50,8 +49,6 @@ export class TagShow extends Component {
     // const taggedNoteItem = taggedNotes.map((note, i) => (
 
     // ))
-    // debugger;
-    console.log(this.props.tag);
     return (
       <div className='tagged-notes-container'>
         <div className='tag-title'>test</div>
@@ -62,7 +59,6 @@ export class TagShow extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger;
   return {
     notes: Object.values(state.entities.notes),
     tag: Object.values(state.entities.tags).find((tag) => {

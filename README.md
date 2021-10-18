@@ -24,7 +24,7 @@
 - Jump right in and add a note. Add a splash of color or some embedded content.
 - Move it around to a different notebook, or change the title.
 
-### Deciding how to divert the path was a bit tricky, so I made the link render conditionally depending on whether or not the specific note was already attached to a notebook.
+### The necessity of diverting a path lead to the implementation of a fun condition - this way, when a user clicks on a note, they're lead to the correct url.
 
 ```jsx
 const NoteIndexItem = (props) => {
@@ -54,7 +54,6 @@ const NoteIndexItem = (props) => {
 ### Organization by Notebooks
 
 - Create a notebook to house your recipes, finances, or project ideas!
-  GIF PLACEHOLDER
 
 ## Technologies
 

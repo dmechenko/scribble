@@ -15,9 +15,9 @@ class Main extends React.Component {
         <Route component={SideNavContainer}></Route>
         <Route path='/notes/' component={NoteIndexContainer}></Route>
         <Route exact path='/notes/' component={NoteSide}></Route>
-        <Route path='/tags' component={TagIndexContainer}></Route>
+        {/* <Route path='/tags' component={TagIndexContainer}></Route>
         <Route path='/tags/:id' component={TagShow}></Route>
-        <Route exact path='/tags/' component={NoteSide}></Route>
+        <Route exact path='/tags/' component={NoteSide}></Route> */}
         <Route path='/notes/:noteId' component={NoteEditorContainer}></Route>
         <Route
           exact

@@ -34,15 +34,15 @@ class SessionForm extends React.Component {
     return (e) => this.setState({ [field]: e.target.value });
   }
 
-  // renderErrors() {
-  //   return (
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={i}>{error}</li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={i}>{error}</li>
+        ))}
+      </ul>
+    );
+  }
   renderEmailErrors() {
     return (
       <ul>
@@ -62,7 +62,6 @@ class SessionForm extends React.Component {
     if (this.props.currentUser) {
       <Redirect to={'/'} />;
     }
-    console.log(this.props.errors);
     return (
       <div className='background-login'>
         <form className='session-form' onSubmit={(e) => this.handleSubmit(e)}>
@@ -97,7 +96,9 @@ class SessionForm extends React.Component {
                 onChange={this.handleChange('email')}
                 placeholder='Email address'
               />
-              <div className='errors'>{this.renderEmailErrors()}</div>
+              {/* <div style={{ display: 'hidden' }} className='errors'>
+                {this.renderEmailErrors()}
+              </div> */}
               <input
                 className='session-input'
                 type='password'
@@ -105,7 +106,7 @@ class SessionForm extends React.Component {
                 onChange={this.handleChange('password')}
                 placeholder='Password'
               />
-              <div className='errors'>{this.renderPasswordErrors()}</div>
+              <div className='errors'>{this.renderErrors()}</div>
               <button className='session-signin-btn'>Sign in</button>
 
               <button

@@ -23,7 +23,7 @@ class NoteEditor extends React.Component {
         updated_at: this.state.updated_at,
       });
     });
-    this.props.fetchTags();
+    // this.props.fetchTags();
   }
 
   componentDidUpdate(prevProps) {
@@ -53,9 +53,7 @@ class NoteEditor extends React.Component {
   }
 
   handleAddTag(tag) {
-    debugger;
     tag.note_id_array.push(this.props.note.id);
-    console.log(this.props);
     this.props.updateTag(tag.note_id_array);
   }
 
@@ -94,7 +92,6 @@ class NoteEditor extends React.Component {
     //   return tag.note_id_array.includes(this.props.note.id);
     // });
 
-    // debugger;
     return (
       <div className='note-container'>
         <div className='note-title-container'>

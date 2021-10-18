@@ -5,8 +5,6 @@ const TagIndexItem = (props) => {
   if (!props.tag) return null;
 
   function handleDelete(e) {
-    console.log(props.tag.id);
-    debugger;
     e.preventDefault();
     props.deleteTag(props.tag.id);
   }
