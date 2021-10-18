@@ -55,6 +55,73 @@ const NoteIndexItem = (props) => {
 
 - Create a notebook to house your recipes, finances, or project ideas!
 
+![Desktop 2021 09 17 - 10 48 37 26_Trim](https://user-images.githubusercontent.com/85643458/137785351-0e6cfd56-2f29-4473-9fd6-cef96e4bc284.gif)
+
+- Moving notes around in notebooks involves updating the note's assigned notebook_id key. This is handled in a modal, mapping through each existing notebook and using an 'onClick' function.
+
+```js
+changeNotebook(notebook) {
+    this.setState({
+      ['notebook_id']: notebook.id,
+    });
+  }
+
+  handleMove() {
+    this.props
+      .updateNote(this.state)
+      .then(
+        this.props.history.push(
+          `/notebooks/${this.state.notebook_id}/notes/${this.state.id}`
+        )
+      )
+      .then(() => this.props.closeModal());
+  }
+```
+
+```js
+<ul>
+  {this.props.notebooks.map((notebook) => {
+    if (this.props.note.notebook_id === notebook.id) {
+      return (
+        <li
+          value={notebook.id}
+          onClick={() => this.changeNotebook(notebook)}
+          className='modal-notebook-list-item'
+          key={notebook.id}
+        >
+          <FontAwesomeIcon className='modal-book-icon' icon={faBook} />
+          {notebook.title} (current)
+        </li>
+      );
+    } else {
+      return (
+        <li
+          value={notebook.id}
+          onClick={() => this.changeNotebook(notebook)}
+          className='modal-notebook-list-item'
+          key={notebook.id}
+        >
+          {' '}
+          <FontAwesomeIcon className='modal-book-icon' icon={faBook} />
+          {notebook.title}
+        </li>
+      );
+    }
+  })}
+</ul>
+```
+
+```js
+<div className='modal-move-btn'>
+  <button className='modal-continue' onClick={() => this.handleMove()}>
+    Continue
+  </button>
+  <button className='modal-cancel' onClick={() => this.props.closeModal()}>
+    Cancel
+  </button>
+</div>
+```
+
 ## Technologies
 
 ### Major Technologies

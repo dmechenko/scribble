@@ -16,7 +16,8 @@ class NoteLis extends React.Component {
     };
 
     let noteItem = notesArray()
-      .reverse()
+      // .reverse()
+      .sort((a, b) => Date.parse(b.updated_at) - Date.parse(a.updated_at))
       .map((note) => <NoteIndexItem note={note} key={note.id} />);
     return <li>{noteItem}</li>;
   }

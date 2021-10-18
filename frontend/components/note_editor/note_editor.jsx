@@ -54,7 +54,8 @@ class NoteEditor extends React.Component {
 
   handleAddTag(tag) {
     tag.note_id_array.push(this.props.note.id);
-    this.props.updateTag(tag.note_id_array);
+    this.props.updateTag(tag);
+    // console.log(tag.note_id_array);
   }
 
   render() {
@@ -120,7 +121,7 @@ class NoteEditor extends React.Component {
                 this.setState({ body: value }, () => {
                   this.props.updateNote(this.state);
                 }),
-              500 //update every x milliseconds
+              100 //update every x milliseconds
             )}
           />
         </div>
