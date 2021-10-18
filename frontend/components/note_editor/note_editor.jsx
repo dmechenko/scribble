@@ -121,7 +121,7 @@ class NoteEditor extends React.Component {
                 this.setState({ body: value }, () => {
                   this.props.updateNote(this.state);
                 }),
-              100 //update every x milliseconds
+              500 //update every x milliseconds
             )}
           />
         </div>
