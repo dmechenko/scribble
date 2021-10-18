@@ -130,10 +130,10 @@
 
 .online-links {
   position: relative;
-  height: 100%;
+  // height: 100%;
   width: 100%;
   // align-items: center;
-  top: 45%;
+  // top: 45%;
   display: flex;
   flex-direction: column;
   font-family: 'Nunito';
@@ -163,4 +163,11 @@
 
 .online-links a:hover {
   color: rgb(185, 185, 185);
+}
+
+.sidenav-div-split {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

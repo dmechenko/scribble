@@ -75,9 +75,11 @@ class NoteEditor extends React.Component {
       'image',
       'video',
       'color',
+      'background',
     ];
 
     const modules = {
+      // syntax: true,
       toolbar: [
         [{ header: '1' }, { header: '2' }, { font: [] }],
         [{ size: [] }],
@@ -134,7 +136,7 @@ class NoteEditor extends React.Component {
             );
           })}
         </div> */}
-        <div className='note-tag-show'>
+        {/* <div className='note-tag-show'>
           <button
             className='tag-create'
             onClick={() => this.props.openModal('create-tag')}
@@ -152,7 +154,7 @@ class NoteEditor extends React.Component {
               );
             }
           })}
-        </div>
+        </div> */}
       </div>
     );
   }

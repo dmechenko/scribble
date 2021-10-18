@@ -49,74 +49,76 @@ class Sidenav extends React.Component {
           <FontAwesomeIcon className='plus-icon' icon={faPlusSquare} />
           New
         </button>
-        <div>
-          <button className='home-btn'>
-            <FontAwesomeIcon className='home-icon' icon={faHome} />
-            <Link to='/notes'>Home</Link>
-          </button>
-          <button className='notebooks-btn'>
-            <FontAwesomeIcon className='book-icon' icon={faBook} />
-            <Link to='/notebooks'>Notebooks</Link>
-          </button>
-          {/* <button className='tags-btn'>
-            <FontAwesomeIcon className='tag-icon' icon={faTags} />
-            <Link to='/tags'>Tags</Link>
-          </button> */}
-          <button className='logout-btn'>
-            <FontAwesomeIcon className='logout-icon' icon={faSignOutAlt} />
-            <Link to='/' onClick={this.props.logout}>
-              Logout
-            </Link>
-          </button>
-        </div>
-        <div className='online-links'>
-          <ul className='sidenav-links'>
-            <li>
-              <a
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://github.com/dmechenko'
-              >
-                {' '}
-                <AiFillGithub />
-                Github{' '}
-              </a>
-            </li>
-            <li>
-              <a
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://www.linkedin.com/in/dmechenko/'
-              >
-                {' '}
-                <AiFillLinkedin />
-                LinkedIn{' '}
-              </a>
-            </li>
-            <li>
-              <a
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://angel.co/u/daniel-m-32'
-              >
-                {' '}
-                <FaAngellist />
-                AngelList{' '}
-              </a>
-            </li>
-            <li className='last-li-sidenav'>
-              {/* <FontAwesomeIcon className='plus-icon' icon={faGlobe} /> */}
-              <BsPersonCircle />
-              <a
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://dmechenko.github.io/portfoliov1.1/'
-              >
-                {' '}
-                Personal Site{' '}
-              </a>
-            </li>
-          </ul>
+        <div className='sidenav-div-split'>
+          <div>
+            <button className='home-btn'>
+              <FontAwesomeIcon className='home-icon' icon={faHome} />
+              <Link to='/notes'>Home</Link>
+            </button>
+            <button className='notebooks-btn'>
+              <FontAwesomeIcon className='book-icon' icon={faBook} />
+              <Link to='/notebooks'>Notebooks</Link>
+            </button>
+            {/* <button className='tags-btn'>
+              <FontAwesomeIcon className='tag-icon' icon={faTags} />
+              <Link to='/tags'>Tags</Link>
+            </button> */}
+            <button className='logout-btn'>
+              <FontAwesomeIcon className='logout-icon' icon={faSignOutAlt} />
+              <Link to='/' onClick={this.props.logout}>
+                Logout
+              </Link>
+            </button>
+          </div>
+          <div className='online-links'>
+            <ul className='sidenav-links'>
+              <li>
+                <a
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  href='https://github.com/dmechenko'
+                >
+                  {' '}
+                  <AiFillGithub />
+                  Github{' '}
+                </a>
+              </li>
+              <li>
+                <a
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  href='https://www.linkedin.com/in/dmechenko/'
+                >
+                  {' '}
+                  <AiFillLinkedin />
+                  LinkedIn{' '}
+                </a>
+              </li>
+              <li>
+                <a
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  href='https://angel.co/u/daniel-m-32'
+                >
+                  {' '}
+                  <FaAngellist />
+                  AngelList{' '}
+                </a>
+              </li>
+              <li className='last-li-sidenav'>
+                {/* <FontAwesomeIcon className='plus-icon' icon={faGlobe} /> */}
+                <BsPersonCircle />
+                <a
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  href='https://dmechenko.github.io/portfoliov1.1/'
+                >
+                  {' '}
+                  Personal Site{' '}
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     );
