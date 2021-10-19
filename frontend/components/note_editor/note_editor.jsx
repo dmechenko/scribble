@@ -7,13 +7,10 @@ class NoteEditor extends React.Component {
   constructor(props) {
     super(props);
     this.today = new Date();
-    // this.state = {
-    //   id: this.props.match.params.noteId,
-    //   title: '',
-    //   body: '',
-    // };
     this.state = {
-      note: this.props.note,
+      id: this.props.match.params.noteId,
+      title: '',
+      body: '',
     };
   }
 
@@ -106,7 +103,7 @@ class NoteEditor extends React.Component {
         <div className='note-title-container'>
           <input
             type='text'
-            // value={this.state.note.title}
+            value={this.state.title}
             onChange={this.handleChange('title')}
           />
           <button
@@ -122,22 +119,17 @@ class NoteEditor extends React.Component {
             theme='snow'
             modules={modules}
             formats={formats}
-            value={this.state.note.body}
+            value={this.state.body}
             placeholder='start scribbling'
-            // onChange={
-            //   // debounce(
-            //   (value) =>
-            //     this.setState({ body: value }, () => {
-            //       this.props.updateNote(this.state);
-            //     })
-            // }
-            // //   500 //update every x milliseconds
-            // // )}
-            onChange={(value) => {
-              this.setState({
-                note: { ...this.state.note, body: value },
-              });
-            }}
+            onChange={
+              // debounce(
+              (value) =>
+                this.setState({ body: value }, () => {
+                  this.props.updateNote(this.state);
+                })
+            }
+            //   500 //update every x milliseconds
+            // )}
           />
         </div>
         {/* <div>
