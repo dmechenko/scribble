@@ -7,32 +7,40 @@ class NoteEditor extends React.Component {
   constructor(props) {
     super(props);
     this.today = new Date();
+    // this.state = {
+    //   id: this.props.match.params.noteId,
+    //   title: '',
+    //   body: '',
+    // };
     this.state = {
-      id: this.props.match.params.noteId,
-      title: '',
-      body: '',
+      note: this.props.note,
     };
   }
 
   componentDidMount() {
-    this.props.fetchNotes();
-    this.props.fetchNote(this.props.match.params.noteId).then((object) => {
-      this.setState({
-        title: object.note.title,
-        body: object.note.body,
-        updated_at: this.state.updated_at,
-      });
+    this.props.fetchNotes().then(() => {
+      this.setState(this.props.note);
     });
+    // this.props.fetchNote(this.props.match.params.noteId).then((object) => {
+    //   this.setState({
+    //     title: object.note.title,
+    //     body: object.note.body,
+    //     updated_at: this.state.updated_at,
+    //   });
+    // });
     // this.props.fetchTags();
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.noteId !== prevProps.noteId) this.setState(this.props.note);
+    if (this.props.noteId !== prevProps.noteId) {
+      // this.props.fetchNote(this.props.note.id);
+      this.setState(this.props.note);
+    }
   }
 
   handleChange(field) {
     return (e) => {
-      return this.setState({ [field]: e.target.value }, () =>
+      this.setState({ [field]: e.target.value }, () =>
         this.props.updateNote(this.state)
       );
     };
@@ -59,6 +67,7 @@ class NoteEditor extends React.Component {
   }
 
   render() {
+    debugger;
     const formats = [
       'header',
       'font',
@@ -92,13 +101,12 @@ class NoteEditor extends React.Component {
     // const noteTags = this.props.tags.filter((tag) => {
     //   return tag.note_id_array.includes(this.props.note.id);
     // });
-
     return (
       <div className='note-container'>
         <div className='note-title-container'>
           <input
             type='text'
-            value={this.state.title}
+            // value={this.state.note.title}
             onChange={this.handleChange('title')}
           />
           <button
@@ -114,15 +122,22 @@ class NoteEditor extends React.Component {
             theme='snow'
             modules={modules}
             formats={formats}
-            value={this.state.body}
+            value={this.state.note.body}
             placeholder='start scribbling'
-            onChange={debounce(
-              (value) =>
-                this.setState({ body: value }, () => {
-                  this.props.updateNote(this.state);
-                }),
-              500 //update every x milliseconds
-            )}
+            // onChange={
+            //   // debounce(
+            //   (value) =>
+            //     this.setState({ body: value }, () => {
+            //       this.props.updateNote(this.state);
+            //     })
+            // }
+            // //   500 //update every x milliseconds
+            // // )}
+            onChange={(value) => {
+              this.setState({
+                note: { ...this.state.note, body: value },
+              });
+            }}
           />
         </div>
         {/* <div>
