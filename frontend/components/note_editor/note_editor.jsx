@@ -136,8 +136,8 @@ class NoteEditor extends React.Component {
             //     })
             // }
             // //   500 //update every x milliseconds
-            // // )}
-            onChange={debounce(this.handleEditorUpdate, 500)}
+            // // )}s
+            onChange={this.handleEditorUpdate}
           />
         </div>
         {/* <div>
