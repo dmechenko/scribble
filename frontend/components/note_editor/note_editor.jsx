@@ -6,12 +6,13 @@ import { debounce } from 'debounce';
 class NoteEditor extends React.Component {
   constructor(props) {
     super(props);
-    this.today = new Date();
+    // this.today = new Date();
     this.state = {
       id: this.props.match.params.noteId,
       title: '',
       body: '',
     };
+    this.handleEditorUpdate = this.handleEditorUpdate.bind(this);
   }
 
   componentDidMount() {
@@ -43,6 +44,12 @@ class NoteEditor extends React.Component {
     };
   }
 
+  handleEditorUpdate(value) {
+    this.setState({ body: value }, () => {
+      this.props.updateNote(this.state);
+    });
+  }
+
   deleteNote() {
     let notes = Object.values(this.props.notes); //notes array
     let nextNote;
@@ -64,7 +71,6 @@ class NoteEditor extends React.Component {
   }
 
   render() {
-    debugger;
     const formats = [
       'header',
       'font',
@@ -84,7 +90,6 @@ class NoteEditor extends React.Component {
     ];
 
     const modules = {
-      // syntax: true,
       toolbar: [
         [{ header: '1' }, { header: '2' }, { font: [] }],
         [{ size: [] }],
@@ -95,9 +100,11 @@ class NoteEditor extends React.Component {
         ['clean'],
       ],
     };
+
     // const noteTags = this.props.tags.filter((tag) => {
     //   return tag.note_id_array.includes(this.props.note.id);
     // });
+
     return (
       <div className='note-container'>
         <div className='note-title-container'>
@@ -121,15 +128,16 @@ class NoteEditor extends React.Component {
             formats={formats}
             value={this.state.body}
             placeholder='start scribbling'
-            onChange={
-              // debounce(
-              (value) =>
-                this.setState({ body: value }, () => {
-                  this.props.updateNote(this.state);
-                })
-            }
-            //   500 //update every x milliseconds
-            // )}
+            // onChange={
+            //   // debounce(
+            //   (value) =>
+            //     this.setState({ body: value }, () => {
+            //       this.props.updateNote(this.state);
+            //     })
+            // }
+            // //   500 //update every x milliseconds
+            // // )}
+            onChange={debounce(this.handleEditorUpdate, 500)}
           />
         </div>
         {/* <div>

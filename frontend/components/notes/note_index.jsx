@@ -56,9 +56,9 @@ class NoteIndex extends React.Component {
           </p>
           <div>{this.props.notebookId ? modalDisplay : null}</div>
         </div>
-        <div onClick={() => this.handleDropDown()}>
+        {/* <div onClick={() => this.handleDropDown()}>
           <FontAwesomeIcon className='filter-icon' icon={faFilter} />
-        </div>
+        </div> */}
         <ul className='note-index-container'>
           <NoteLis
             notes={this.props.notes}
