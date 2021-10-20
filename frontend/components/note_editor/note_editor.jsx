@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import ReactQuill from 'react-quill';
 import { debounce } from 'debounce';
-// import 'react-quill/dist/quill.snow.css';
 
 class NoteEditor extends React.Component {
   constructor(props) {
     super(props);
-    // this.today = new Date();
     this.state = {
       id: this.props.match.params.noteId,
       title: '',
       body: '',
     };
-    this.handleEditorUpdate = this.handleEditorUpdate.bind(this);
   }
 
   componentDidMount() {
@@ -31,7 +28,6 @@ class NoteEditor extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.noteId !== prevProps.noteId) {
-      // this.props.fetchNote(this.props.note.id);
       this.setState(this.props.note);
     }
   }
@@ -45,9 +41,12 @@ class NoteEditor extends React.Component {
   }
 
   handleEditorUpdate(value) {
-    this.setState({ body: value }, () => {
-      this.props.updateNote(this.state);
-    });
+    this.setState({ ...this.state, body: value });
+  }
+
+  handleNoteUpdate(e) {
+    e.preventDefault();
+    this.props.updateNote(this.state);
   }
 
   deleteNote() {
@@ -67,7 +66,6 @@ class NoteEditor extends React.Component {
   handleAddTag(tag) {
     tag.note_id_array.push(this.props.note.id);
     this.props.updateTag(tag);
-    // console.log(tag.note_id_array);
   }
 
   render() {
@@ -121,7 +119,10 @@ class NoteEditor extends React.Component {
           </button>
           <button onClick={() => this.deleteNote()}>Delete</button>
         </div>
-        <div className='quill-container'>
+        <div
+          className='quill-container'
+          onBlur={(e) => this.handleNoteUpdate(e)}
+        >
           <ReactQuill
             theme='snow'
             modules={modules}
@@ -137,7 +138,7 @@ class NoteEditor extends React.Component {
             // }
             // //   500 //update every x milliseconds
             // // )}s
-            onChange={this.handleEditorUpdate}
+            onChange={() => this.handleEditorUpdate()}
           />
         </div>
         {/* <div>

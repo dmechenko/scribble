@@ -8,7 +8,6 @@
   font-size: 2rem;
   font-weight: bold;
   align-items: center;
-  // padding-right: 50px;
   font-family: 'Urbanist', sans-serif;
 }
 
@@ -27,20 +26,13 @@
   font-family: 'Urbanist', sans-serif;
   min-width: 800px;
   gap: 30px;
-  // background: radial-gradient(
-  //   ellipse at center,
-  //   rgba(255, 254, 234, 1) 0%,
-  //   rgba(255, 254, 234, 1) 35%,
-  //   #b7e8eb 100%
-  // );
+
   background: linear-gradient(
     0deg,
     rgba(164, 247, 254, 1) 0%,
     rgba(219, 249, 251, 1) 4%,
     rgba(255, 255, 255, 1) 8%
   );
-
-  // max-width: 1080px;
 }
 
 .main-nav#logo-text {
@@ -54,7 +46,6 @@
   text-align: justify;
   text-decoration: none;
   color: black;
-  // margin-left: 20px;
   flex-direction: row;
   transition-property: color;
   :hover {

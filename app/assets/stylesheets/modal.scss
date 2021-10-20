@@ -19,7 +19,6 @@
   width: 500px;
   height: 400px;
   background: white;
-  // border: 3px solid red;
   border-radius: 6px;
   font-family: Nunito;
   padding-bottom: 43px;
@@ -182,11 +181,12 @@
 }
 
 .notebook-edit-btn-container {
-  display: flex;
-  justify-content: flex-end;
+  // display: flex;
+  // justify-content: flex-end;
   position: absolute;
   top: 62px;
-  left: 427px;
+  // left: 427px;
+  margin-left: 167px;
 }
 
 .notebook-edit-btn {

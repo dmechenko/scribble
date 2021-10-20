@@ -34,7 +34,6 @@
   p {
     font-family: Calibri;
     font-size: 0.9rem;
-    // font-weight: 200;
     margin-bottom: 40px;
     color: rgb(73, 73, 73);
   }
@@ -58,7 +57,7 @@
   }
 
   .session-signin-btn:hover {
-    background-color: #1f9acf; //linear-gradient(rgba(0, 0, 0, 0.2) 0 0);
+    background-color: #1f9acf;
     transition-duration: 0.2s;
   }
 
@@ -103,7 +102,6 @@
     display: flex;
     align-content: center;
     justify-content: center;
-    // pointer-events: none;
     transition-property: background-color;
   }
 
@@ -112,7 +110,7 @@
   }
 
   .fake-button:hover {
-    background-color: #e2e2e2; //linear-gradient(rgba(0, 0, 0, 0.2) 0 0);
+    background-color: #e2e2e2;
     transition-duration: 0.2s;
   }
 
@@ -161,13 +159,9 @@
     font-family: Urbanist;
     color: red;
     font-size: 0.8rem;
-    // margin-top: 6px;
-    // margin-bottom: 12px;
     margin: 3px 0;
   }
-  // div.errors ul :first-child {
-  //   margin: 6px 0;
-  // }
+
   .errors {
     width: 86%;
   }

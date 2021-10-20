@@ -34,8 +34,6 @@ class MoveNote extends React.Component {
       .then(() => this.props.closeModal());
   }
 
-  //e.currentTarget.__reactFiber$kguov6shfk8.key
-
   render() {
     return (
       <div className='modal-container'>
