@@ -10,7 +10,6 @@ class NoteEditor extends React.Component {
       title: '',
       body: '',
     };
-    this.handleEditorUpdate = this.handleEditorUpdate.bind(this);
   }
 
   componentDidMount() {
@@ -139,7 +138,7 @@ class NoteEditor extends React.Component {
             // }
             // //   500 //update every x milliseconds
             // // )}s
-            onChange={this.handleEditorUpdate}
+            onChange={(value) => this.handleEditorUpdate(value)}
           />
         </div>
         {/* <div>
