@@ -49,7 +49,9 @@ class NoteIndex extends React.Component {
               <FontAwesomeIcon icon={faStickyNote} />
             </div>
             {/* Notes */}
-            {this.props.notebookId ? this.props.notebookId.title : 'Notes'}
+            <h2>
+              {this.props.notebookId ? this.props.notebookId.title : 'Notes'}
+            </h2>
           </span>
           <p>
             {notesArray()} {notesArray() === 1 ? 'note' : 'notes'}

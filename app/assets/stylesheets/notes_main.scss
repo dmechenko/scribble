@@ -50,10 +50,17 @@
       margin-bottom: 20px;
       display: flex;
       width: 100%;
+      max-height: 26px;
     }
     p {
       font-size: 0.86rem;
       margin-bottom: 10px;
+    }
+    h2 {
+      inline-size: auto;
+      overflow: hidden;
+      max-height: 26px;
+      word-break: break-all;
     }
   }
 }
