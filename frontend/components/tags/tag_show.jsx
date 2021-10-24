@@ -16,7 +16,7 @@ export class TagShow extends Component {
 
   componentDidMount() {
     this.props.fetchNotes();
-    // this.props.fetchTags();
+    this.props.fetchTags();
   }
 
   renderTaggedNotes() {

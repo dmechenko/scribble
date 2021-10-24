@@ -59,10 +59,10 @@ class Sidenav extends React.Component {
               <FontAwesomeIcon className='book-icon' icon={faBook} />
               <Link to='/notebooks'>Notebooks</Link>
             </button>
-            {/* <button className='tags-btn'>
+            <button className='tags-btn'>
               <FontAwesomeIcon className='tag-icon' icon={faTags} />
               <Link to='/tags'>Tags</Link>
-            </button> */}
+            </button>
             <button className='logout-btn'>
               <FontAwesomeIcon className='logout-icon' icon={faSignOutAlt} />
               <Link to='/' onClick={this.props.logout}>

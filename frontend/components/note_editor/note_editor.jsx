@@ -23,7 +23,7 @@ class NoteEditor extends React.Component {
     //     updated_at: this.state.updated_at,
     //   });
     // });
-    // this.props.fetchTags();
+    this.props.fetchTags();
   }
 
   componentDidUpdate(prevProps) {
@@ -99,9 +99,9 @@ class NoteEditor extends React.Component {
       ],
     };
 
-    // const noteTags = this.props.tags.filter((tag) => {
-    //   return tag.note_id_array.includes(this.props.note.id);
-    // });
+    const noteTags = this.props.tags.filter((tag) => {
+      return tag.note_id_array.includes(this.props.note.id);
+    });
 
     return (
       <div className='note-container'>
@@ -141,7 +141,7 @@ class NoteEditor extends React.Component {
             onChange={(value) => this.handleEditorUpdate(value)}
           />
         </div>
-        {/* <div>
+        <div>
           {this.props.tags.map((tag) => {
             return (
               <li className='note-tag-show' key={tag.id}>
@@ -149,8 +149,8 @@ class NoteEditor extends React.Component {
               </li>
             );
           })}
-        </div> */}
-        {/* <div className='note-tag-show'>
+        </div>
+        <div className='note-tag-show'>
           <button
             className='tag-create'
             onClick={() => this.props.openModal('create-tag')}
@@ -168,7 +168,7 @@ class NoteEditor extends React.Component {
               );
             }
           })}
-        </div> */}
+        </div>
       </div>
     );
   }

@@ -8,7 +8,7 @@ class NoteIndex extends React.Component {
   componentDidMount() {
     this.props.fetchNotes();
     this.props.fetchNotebooks();
-    // this.props.fetchTags();
+    this.props.fetchTags();
   }
 
   handleDropDown() {
